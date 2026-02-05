@@ -67,7 +67,7 @@
         line-height: 1.3;
       }
 
-       /* Header */
+      /* Header */
       header {
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(20px);
@@ -78,14 +78,14 @@
         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
         transition: all 0.3s ease;
         justify-content: center;
-         align-items: center;
+        align-items: center;
       }
 
       .navbar-brand img {
         height: 60px;
         transition: transform 0.3s ease;
         justify-content: center;
-         align-items: center;
+        align-items: center;
       }
 
       .navbar-brand img:hover {
@@ -93,7 +93,6 @@
       }
 
       .logo-container {
-       
         align-items: center;
         gap: 1.5rem;
         justify-content: center;
@@ -297,13 +296,14 @@
         margin-right: auto;
       }
 
+      /* Enhanced Feature Card with Real Images */
       .feature-card {
         background: white;
         border-radius: 20px;
         padding: 2.5rem;
         height: 100%;
         border: 2px solid var(--border-light);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
       }
@@ -318,12 +318,36 @@
         background: var(--gradient-blue);
         transform: scaleX(0);
         transform-origin: left;
-        transition: transform 0.4s ease;
+        transition: transform 0.5s ease;
+      }
+
+      .feature-card::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(21, 101, 192, 0.1) 0%,
+          transparent 70%
+        );
+        transform: translate(-50%, -50%);
+        transition:
+          width 0.6s ease,
+          height 0.6s ease;
+      }
+
+      .feature-card:hover::after {
+        width: 500px;
+        height: 500px;
       }
 
       .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: var(--shadow-lg);
+        transform: translateY(-15px) scale(1.02);
+        box-shadow: 0 20px 60px rgba(21, 101, 192, 0.2);
         border-color: var(--light-blue);
       }
 
@@ -333,7 +357,7 @@
 
       .feature-image {
         width: 100%;
-        height: 180px;
+        height: 200px;
         background: var(--gradient-soft);
         border-radius: 15px;
         display: flex;
@@ -345,22 +369,24 @@
       }
 
       .feature-image img {
-        width: 80%;
-        height: 80%;
-        object-fit: contain;
-        transition: all 0.3s ease;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        border-radius: 10px;
       }
 
       .feature-card:hover .feature-image img {
-        transform: scale(1.1);
+        transform: scale(1.2);
+        filter: brightness(1.1);
       }
 
       .feature-number {
         position: absolute;
         top: 15px;
         right: 15px;
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         background: var(--primary-blue);
         color: white;
         border-radius: 50%;
@@ -368,19 +394,31 @@
         align-items: center;
         justify-content: center;
         font-weight: 700;
-        font-size: 1.1rem;
+        font-size: 1.2rem;
+        z-index: 10;
+        box-shadow: 0 4px 15px rgba(21, 101, 192, 0.4);
+        transition: all 0.4s ease;
+      }
+
+      .feature-card:hover .feature-number {
+        transform: rotate(360deg) scale(1.2);
+        background: var(--accent-blue);
       }
 
       .feature-title {
         font-size: 1.4rem;
         margin-bottom: 1rem;
         color: var(--text-dark);
+        position: relative;
+        z-index: 2;
       }
 
       .feature-description {
         color: var(--text-light);
         line-height: 1.7;
         margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 2;
       }
 
       .feature-link {
@@ -391,6 +429,8 @@
         align-items: center;
         gap: 0.5rem;
         transition: all 0.3s ease;
+        position: relative;
+        z-index: 2;
       }
 
       .feature-link:hover {
@@ -401,6 +441,10 @@
       .feature-link::after {
         content: "→";
         transition: transform 0.3s ease;
+      }
+
+      .feature-link:hover::after {
+        transform: translateX(5px);
       }
 
       .ai-section {
@@ -438,12 +482,14 @@
         padding: 2rem;
         margin-bottom: 1.5rem;
         border: 1px solid rgba(255, 255, 255, 0.2);
-        transition: all 0.3s ease;
+        transition: all 0.4s ease;
+        transform-origin: left;
       }
 
       .ai-feature-box:hover {
         background: rgba(255, 255, 255, 0.15);
-        transform: translateY(-5px);
+        transform: translateX(10px) scale(1.02);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
       }
 
       .ai-feature-box h4 {
@@ -471,19 +517,38 @@
         background: var(--bg-light);
       }
 
+      /* Enhanced Function Category with Real Images */
       .function-category {
         background: white;
-        border-radius: 15px;
+        border-radius: 20px;
         padding: 2rem;
         height: 100%;
-        transition: all 0.3s ease;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
         border: 2px solid var(--border-light);
         box-shadow: var(--shadow-sm);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .function-category::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: var(--gradient-blue);
+        opacity: 0.1;
+        transition: height 0.5s ease;
+      }
+
+      .function-category:hover::before {
+        height: 100%;
       }
 
       .function-category:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-lg);
+        transform: translateY(-12px) scale(1.03);
+        box-shadow: 0 20px 60px rgba(21, 101, 192, 0.25);
         border-color: var(--light-blue);
       }
 
@@ -492,41 +557,49 @@
         margin-bottom: 1.5rem;
         padding-bottom: 1rem;
         border-bottom: 2px solid var(--border-light);
+        position: relative;
+        z-index: 2;
       }
 
       .category-image {
-        width: 80px;
-        height: 80px;
-        background: var(--gradient-soft);
-        border-radius: 15px;
+        width: 300px;
+        height: 250px;
+        background: white;
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 0 auto 1rem;
-        transition: all 0.3s ease;
+        transition: all 0.5s ease;
+        overflow: hidden;
+        border: 3px solid var(--border-light);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
       }
 
       .function-category:hover .category-image {
-        background: var(--gradient-blue);
-        transform: scale(1.05);
+        transform: scale(1.15);
       }
 
       .category-image img {
-        width: 50px;
-        height: 50px;
-        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
       }
 
       .category-title {
         font-size: 1.3rem;
         margin: 0;
         color: var(--text-dark);
+        position: relative;
+        z-index: 2;
       }
 
       .function-list {
         list-style: none;
         padding: 0;
         margin: 0;
+        position: relative;
+        z-index: 2;
       }
 
       .function-list li {
@@ -540,8 +613,9 @@
       }
 
       .function-list li:hover {
-        padding-left: 1rem;
-        background: rgba(21, 101, 192, 0.03);
+        padding-left: 1.5rem;
+        background: rgba(21, 101, 192, 0.05);
+        border-radius: 8px;
       }
 
       .function-list a {
@@ -559,6 +633,10 @@
         color: var(--primary-blue);
         font-weight: bold;
         transition: transform 0.3s ease;
+      }
+
+      .function-list li:hover a::before {
+        transform: translateX(5px);
       }
 
       .function-list a:hover {
@@ -760,8 +838,6 @@
         transform: translateY(-3px);
       }
 
-     
-
       .scroll-top {
         position: fixed;
         bottom: 30px;
@@ -827,6 +903,21 @@
         }
       }
 
+      /* Pulse Animation for Numbers */
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+      }
+
+      .feature-number {
+        animation: pulse 2s ease-in-out infinite;
+      }
+
       @media (max-width: 992px) {
         .hero-title {
           font-size: 2.8rem;
@@ -876,12 +967,17 @@
     <div class="loading-overlay" id="loadingOverlay">
       <div class="loader"></div>
     </div>
- <!-- Header -->
+
+    <!-- Header -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
           <div class="logo-container navbar-brand">
-            <img src="https://www.zolytics.in/files/logo.png" alt="Zolytics" style="height: 90px;"/>
+            <img
+              src="https://www.zolytics.in/files/logo.png"
+              alt="Zolytics"
+              style="height: 90px"
+            />
             <img
               src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdTQEbDWijJJOsGV6OlCOLqso6XYRiHXzCPw&s"
               alt="Zoho ERP"
@@ -949,15 +1045,15 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231565C0' width='200' height='200' rx='20'/%3E%3Ccircle cx='100' cy='70' r='30' fill='%23fff' opacity='0.9'/%3E%3Cpath d='M60 120 Q100 100 140 120 L140 160 Q100 180 60 160 Z' fill='%23fff' opacity='0.9'/%3E%3C/svg%3E"
-                  alt="Cloud"
+                  src="https://tsdev-ts.s3.amazonaws.com/wp-content/uploads/2019/01/23121903/images.martechadvisor.combest_cloud_computing_plat-352db40b92aedcdd27dfe0c03497f5cc9f91d51c.jpg"
+                  alt="Cloud Technology"
                 />
                 <span class="feature-number">01</span>
               </div>
               <h3 class="feature-title">Cloud-Based Platform</h3>
               <p class="feature-description">
                 Access your business data anywhere, anytime with our fully
-                cloud-hosted solution.
+                cloud-hosted solution offering seamless scalability.
               </p>
               <a href="#" class="feature-link">Learn more</a>
             </div>
@@ -971,15 +1067,15 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231976D2' width='200' height='200' rx='20'/%3E%3Cpath d='M50 50 L80 50 L80 80 L50 80 Z' fill='%23fff' opacity='0.9'/%3E%3Cpath d='M90 50 L120 50 L120 80 L90 80 Z' fill='%23fff' opacity='0.8'/%3E%3Cpath d='M130 50 L160 50 L160 80 L130 80 Z' fill='%23fff' opacity='0.7'/%3E%3C/svg%3E"
-                  alt="Customization"
+                  src="https://d2ap5pxphtale5.cloudfront.net/webcluesinfotech/1721904631407The%20Impact%20of%20Low-Code%20and%20No-Code%20Platforms%20on%20Modern%20App%20Development-4-min.jpg"
+                  alt="Customization Dashboard"
                 />
                 <span class="feature-number">02</span>
               </div>
               <h3 class="feature-title">Low-Code Customization</h3>
               <p class="feature-description">
                 Utilize our drag-and-drop interface to build custom modules
-                tailored to your workflows.
+                tailored to your unique business workflows.
               </p>
               <a href="#" class="feature-link">Explore customization</a>
             </div>
@@ -993,15 +1089,15 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%232196F3' width='200' height='200' rx='20'/%3E%3Crect x='50' y='50' width='100' height='100' rx='10' fill='none' stroke='%23fff' stroke-width='4' opacity='0.9'/%3E%3C/svg%3E"
-                  alt="Security"
+                  src="https://www.cyberdb.co/wp-content/uploads/2021/02/7cyber-4.jpg"
+                  alt="Security Lock"
                 />
                 <span class="feature-number">03</span>
               </div>
               <h3 class="feature-title">Enterprise Security</h3>
               <p class="feature-description">
                 Protect your sensitive data with bank-grade encryption and
-                compliance standards.
+                industry-leading compliance standards.
               </p>
               <a href="#" class="feature-link">View security</a>
             </div>
@@ -1015,15 +1111,15 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%2342A5F5' width='200' height='200' rx='20'/%3E%3Ccircle cx='70' cy='100' r='25' fill='%23fff' opacity='0.9'/%3E%3Ccircle cx='130' cy='100' r='25' fill='%23fff' opacity='0.9'/%3E%3C/svg%3E"
-                  alt="Integration"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT97qly1pLFijrFq0fot-GVlhHuHOR4pHFZWQ&s"
+                  alt="Integration Network"
                 />
                 <span class="feature-number">04</span>
               </div>
               <h3 class="feature-title">Seamless Integration</h3>
               <p class="feature-description">
                 Connect with 1000+ third-party applications through our robust
-                API framework.
+                API framework and marketplace.
               </p>
               <a href="#" class="feature-link">Browse integrations</a>
             </div>
@@ -1037,15 +1133,15 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231565C0' width='200' height='200' rx='20'/%3E%3Cpolyline points='40,150 60,130 80,140 100,100 120,110 140,80 160,90' fill='none' stroke='%23fff' stroke-width='4' opacity='0.9'/%3E%3C/svg%3E"
-                  alt="Analytics"
+                  src="https://datahubanalytics.com/wp-content/uploads/2024/04/dha-talend.jpg"
+                  alt="Analytics Dashboard"
                 />
                 <span class="feature-number">05</span>
               </div>
               <h3 class="feature-title">Real-Time Analytics</h3>
               <p class="feature-description">
                 Make data-driven decisions with customizable dashboards and
-                predictive analytics.
+                AI-powered predictive analytics.
               </p>
               <a href="#" class="feature-link">See analytics</a>
             </div>
@@ -1059,15 +1155,15 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231976D2' width='200' height='200' rx='20'/%3E%3Ctext x='100' y='120' font-family='Arial' font-size='80' fill='%23fff' text-anchor='middle' font-weight='bold' opacity='0.9'%3E$%3C/text%3E%3C/svg%3E"
-                  alt="Pricing"
+                  src="https://spp.co/assets/content/cost-based-pricing.jpg"
+                  alt="Pricing Strategy"
                 />
                 <span class="feature-number">06</span>
               </div>
               <h3 class="feature-title">Cost-Effective Pricing</h3>
               <p class="feature-description">
                 Starting at just $20/user/month with transparent pricing and no
-                hidden fees.
+                hidden fees or long-term contracts.
               </p>
               <a href="#" class="feature-link">View pricing</a>
             </div>
@@ -1090,7 +1186,7 @@
               <h4>Intelligent Automation</h4>
               <p>
                 Automatically identify repetitive tasks and create workflows,
-                macros, and approval chains.
+                macros, and approval chains without coding.
               </p>
             </div>
 
@@ -1098,7 +1194,7 @@
               <h4>Predictive Analytics</h4>
               <p>
                 Forecast customer churn and identify high-value opportunities
-                with AI-powered models.
+                with AI-powered predictive models.
               </p>
             </div>
 
@@ -1106,7 +1202,7 @@
               <h4>Conversational AI Agents</h4>
               <p>
                 Deploy custom AI agents for sales, HR, customer support, and IT
-                help desk.
+                help desk operations.
               </p>
             </div>
 
@@ -1114,7 +1210,7 @@
               <h4>Fraud Detection & OCR</h4>
               <p>
                 Automatically detect duplicate claims and transform paper bills
-                into live data.
+                into live, actionable data.
               </p>
             </div>
           </div>
@@ -1148,7 +1244,7 @@
               <div class="category-header">
                 <div class="category-image">
                   <img
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%231565C0' opacity='0.2'/%3E%3Cpath d='M30 40 L40 50 L60 30' stroke='%231565C0' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+                    src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=400&h=400&fit=crop"
                     alt="Sales"
                   />
                 </div>
@@ -1173,7 +1269,7 @@
               <div class="category-header">
                 <div class="category-image">
                   <img
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='20' width='60' height='60' rx='5' fill='%231976D2' opacity='0.2'/%3E%3Ccircle cx='50' cy='40' r='10' fill='%231976D2'/%3E%3C/svg%3E"
+                    src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=400&fit=crop"
                     alt="Procurement"
                   />
                 </div>
@@ -1199,7 +1295,7 @@
               <div class="category-header">
                 <div class="category-image">
                   <img
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='25' y='25' width='20' height='20' fill='%232196F3' opacity='0.3'/%3E%3Crect x='55' y='25' width='20' height='20' fill='%232196F3' opacity='0.4'/%3E%3C/svg%3E"
+                    src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=400&fit=crop"
                     alt="Inventory"
                   />
                 </div>
@@ -1225,7 +1321,7 @@
               <div class="category-header">
                 <div class="category-image">
                   <img
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='30' y='30' width='40' height='40' rx='5' fill='none' stroke='%2342A5F5' stroke-width='2'/%3E%3C/svg%3E"
+                    src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=400&h=400&fit=crop"
                     alt="Accounting"
                   />
                 </div>
@@ -1251,7 +1347,7 @@
               <div class="category-header">
                 <div class="category-image">
                   <img
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='35' r='12' fill='%231565C0' opacity='0.3'/%3E%3Cpath d='M30 70 Q50 55 70 70' fill='%231565C0' opacity='0.3'/%3E%3C/svg%3E"
+                    src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=400&fit=crop"
                     alt="HR"
                   />
                 </div>
@@ -1278,7 +1374,7 @@
               <div class="category-header">
                 <div class="category-image">
                   <img
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='25' y='40' width='50' height='30' fill='%231976D2' opacity='0.3'/%3E%3C/svg%3E"
+                    src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=400&fit=crop"
                     alt="Manufacturing"
                   />
                 </div>
@@ -1304,7 +1400,7 @@
               <div class="category-header">
                 <div class="category-image">
                   <img
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='40' width='30' height='20' rx='2' fill='%232196F3' opacity='0.3'/%3E%3Ccircle cx='40' cy='65' r='5' fill='%232196F3'/%3E%3C/svg%3E"
+                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=400&fit=crop"
                     alt="Distribution"
                   />
                 </div>
@@ -1329,7 +1425,7 @@
               <div class="category-header">
                 <div class="category-image">
                   <img
-                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%2342A5F5' stroke-width='3'/%3E%3Cpath d='M40 50 L48 58 L65 40' stroke='%2342A5F5' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+                    src="https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?w=400&h=400&fit=crop"
                     alt="Quality"
                   />
                 </div>
@@ -1590,8 +1686,8 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231565C0' x='50' y='40' width='100' height='120' rx='5' opacity='0.2'/%3E%3Crect fill='%231565C0' x='60' y='50' width='80' height='5' opacity='0.6'/%3E%3C/svg%3E"
-                  alt="Docs"
+                  src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&h=600&fit=crop"
+                  alt="Documentation"
                 />
               </div>
               <h3 class="feature-title">Documentation</h3>
@@ -1610,7 +1706,7 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='70' r='25' fill='%231976D2' opacity='0.3'/%3E%3Ccircle cx='70' cy='120' r='20' fill='%231976D2' opacity='0.4'/%3E%3Ccircle cx='130' cy='120' r='20' fill='%231976D2' opacity='0.4'/%3E%3C/svg%3E"
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop"
                   alt="Community"
                 />
               </div>
@@ -1630,7 +1726,7 @@
             <div class="feature-card">
               <div class="feature-image">
                 <img
-                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M70 140 L100 70 L130 140 Z' fill='%232196F3' opacity='0.3'/%3E%3C/svg%3E"
+                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=600&fit=crop"
                   alt="Training"
                 />
               </div>
@@ -1645,8 +1741,7 @@
       </div>
     </section>
 
-   
-      <!-- Global Footer -->
+    <!-- Global Footer -->
     <footer class="site-footer">
       <div class="footer-content">
         <!-- Company Info -->
@@ -1660,7 +1755,7 @@
           </p>
         </div>
 
-         <!-- Zoho Solutions - Centered with balanced columns -->
+        <!-- Zoho Solutions - Centered with balanced columns -->
         <div class="footer-section zoho-solutions">
           <h3 class="center-heading">Zoho Solutions</h3>
           <div class="solutions-wrapper">
@@ -1674,11 +1769,8 @@
               <li><a href="expense-html">Zoho Expense</a></li>
               <li><a href="finance.html">Zoho Finance Plus</a></li>
               <li><a href="inventory-html">Zoho Inventory</a></li>
-
               <li><a href="payroll-html">Zoho Payroll</a></li>
-
               <li><a href="peopleplus-html">Zoho People Plus</a></li>
-
               <li><a href="recruit-html">Zoho Recruit</a></li>
             </ul>
           </div>
@@ -1691,7 +1783,8 @@
             Email: info@zolytics.in <br />
             Phone: +91 90 7313 9613<br />
             Location: India
-             <div
+          </p>
+          <div
             style="
               display: flex;
               align-items: center;
@@ -1710,15 +1803,14 @@
               "
             >
               <img
-                src="data:image/png;base64,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"
+                src="data:image/png;base64,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"
                 alt="WhatsApp"
                 width="22"
                 height="22"
               />
-              <span style="font-weight: 500">  +91 90 7313 9613</span>
+              <span style="font-weight: 500"> +91 90 7313 9613</span>
             </a>
           </div>
-          </p>
           <div class="zoho-logo">
             <img
               src="https://www.zohowebstatic.com/sites/zweb/images/commonroot/zoho-logo-white.svg"
@@ -1779,7 +1871,6 @@
         line-height: 1.7;
       }
 
-      /* Solutions Grid - Perfectly Centered & Aligned */
       .zoho-solutions {
         display: flex;
         flex-direction: column;
@@ -1815,7 +1906,6 @@
         color: #38bdf8;
       }
 
-      /* Links */
       .site-footer a {
         color: #d1d5db;
         text-decoration: none;
@@ -1827,7 +1917,6 @@
         color: #38bdf8;
       }
 
-      /* Zoho Logo */
       .zoho-logo {
         margin-top: 16px;
       }
@@ -1852,7 +1941,6 @@
         font-size: 13px;
       }
 
-      /* Responsive adjustments */
       @media (max-width: 768px) {
         .footer-content {
           grid-template-columns: 1fr;
@@ -1872,7 +1960,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
-        duration: 800,
+        duration: 1000,
         easing: "ease-in-out",
         once: true,
         mirror: false,
@@ -1935,7 +2023,7 @@
 
       navLinks.forEach((link) => {
         link.addEventListener("click", () => {
-          if (navbarCollapse.classList.contains("show")) {
+          if (navbarCollapse && navbarCollapse.classList.contains("show")) {
             const bsCollapse = new bootstrap.Collapse(navbarCollapse);
             bsCollapse.hide();
           }

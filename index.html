@@ -3,49 +3,38 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Zoho ERP Implementation & Consulting Services | Transform Your Business
-    </title>
-
-    <!-- Bootstrap 5 CSS -->
+    <title>Zoho ERP - Intelligent Business Management Solutions</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-
-    <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-
-    <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-
     <style>
       :root {
-        --zoho-red: #ce2232;
-        --zoho-blue: #0974b0;
-        --zoho-green: #219e4a;
-        --zoho-yellow: #ffe004;
-        --dark-bg: #0a0a0a;
-        --light-gray: #f8f9fa;
-        --medium-gray: #6c757d;
-        --gradient-1: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        --gradient-3: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        --gradient-primary: linear-gradient(
+        --primary-blue: #1565c0;
+        --secondary-blue: #1976d2;
+        --light-blue: #2196f3;
+        --accent-blue: #42a5f5;
+        --dark-blue: #0d47a1;
+        --gradient-blue: linear-gradient(
           135deg,
-          var(--zoho-red),
-          var(--zoho-blue),
-          var(--zoho-green)
+          #1565c0 0%,
+          #1976d2 50%,
+          #2196f3 100%
         );
+        --gradient-soft: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+        --text-dark: #212529;
+        --text-light: #546e7a;
+        --bg-light: #f8f9fa;
+        --white: #ffffff;
+        --border-light: #e0e0e0;
+        --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+        --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+        --shadow-lg: 0 10px 40px rgba(21, 101, 192, 0.12);
       }
 
       * {
@@ -55,195 +44,148 @@
       }
 
       body {
-        font-family: "Inter", sans-serif;
-        color: #333;
+        font-family:
+          "Inter",
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          sans-serif;
+        color: var(--text-dark);
+        background: var(--white);
         overflow-x: hidden;
-        background: #fff;
-        position: relative;
+        line-height: 1.6;
       }
 
-      /* Animated Background Particles */
-      .particles-bg {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-        opacity: 0.03;
-      }
-
-      .particle {
-        position: absolute;
-        background: var(--zoho-blue);
-        border-radius: 50%;
-        animation: float 15s infinite ease-in-out;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0) translateX(0) scale(1);
-        }
-        25% {
-          transform: translateY(-50px) translateX(30px) scale(1.1);
-        }
-        50% {
-          transform: translateY(-100px) translateX(-30px) scale(0.9);
-        }
-        75% {
-          transform: translateY(-50px) translateX(40px) scale(1.05);
-        }
-      }
-
-      /* Enhanced Navbar */
-      .navbar {
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(20px);
-        box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
-        padding: 1rem 0;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        z-index: 1000;
-      }
-
-      .navbar::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: var(--gradient-primary);
-        transform: scaleX(0);
-        transition: transform 0.4s ease;
-      }
-
-      .navbar.scrolled::before {
-        transform: scaleX(1);
-      }
-
-      .navbar.scrolled {
-        box-shadow: 0 5px 40px rgba(0, 0, 0, 0.15);
-        background: rgba(255, 255, 255, 0.98);
-      }
-
-      .navbar-brand {
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
         font-family: "Poppins", sans-serif;
-        font-size: 1.6rem;
-        font-weight: 800;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-right: 2.5rem;
-        position: relative;
-        transition: transform 0.3s ease;
+        font-weight: 700;
+        line-height: 1.3;
       }
 
-      .navbar-brand:hover {
+       /* Header */
+      header {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        justify-content: center;
+         align-items: center;
+      }
+
+      .navbar-brand img {
+        height: 60px;
+        transition: transform 0.3s ease;
+        justify-content: center;
+         align-items: center;
+      }
+
+      .navbar-brand img:hover {
         transform: scale(1.05);
       }
 
-      .zolytics-brand {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: var(--zoho-blue);
-        text-decoration: none;
+      .logo-container {
+       
+        align-items: center;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .btn-primary-custom {
+        background: var(--gradient-blue);
+        border: none;
+        color: white;
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
         transition: all 0.3s ease;
-        position: relative;
-        padding: 0.5rem 1rem;
+        box-shadow: 0 4px 15px rgba(21, 101, 192, 0.3);
+        cursor: pointer;
       }
 
-      .zolytics-brand::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 50%;
-        width: 0;
-        height: 2px;
-        background: var(--zoho-blue);
+      .btn-primary-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(21, 101, 192, 0.4);
+        color: white;
+      }
+
+      .btn-outline-custom {
+        background: transparent;
+        border: 2px solid var(--primary-blue);
+        color: var(--primary-blue);
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
         transition: all 0.3s ease;
-        transform: translateX(-50%);
+        cursor: pointer;
       }
 
-      .zolytics-brand:hover {
-        color: var(--zoho-green);
+      .btn-outline-custom:hover {
+        background: var(--primary-blue);
+        color: white;
+        transform: translateY(-3px);
       }
 
-      .zolytics-brand:hover::before {
-        width: 100%;
-      }
-
-      /* Hero Section with Advanced Effects */
       .hero-section {
+        position: relative;
+        padding: 100px 0 80px;
         background: linear-gradient(
           135deg,
-          #0a2540 0%,
-          #0974b0 50%,
-          #219e4a 100%
+          #e3f2fd 0%,
+          #bbdefb 50%,
+          #90caf9 100%
         );
-        padding: 140px 0 100px;
-        position: relative;
         overflow: hidden;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
+        min-height: 650px;
       }
 
       .hero-section::before {
         content: "";
         position: absolute;
         top: -50%;
-        right: -20%;
-        width: 80%;
-        height: 150%;
+        right: -10%;
+        width: 800px;
+        height: 800px;
         background: radial-gradient(
           circle,
-          rgba(255, 255, 255, 0.1) 0%,
+          rgba(21, 101, 192, 0.15) 0%,
           transparent 70%
         );
-        animation: pulse 8s infinite ease-in-out;
-      }
-
-      @keyframes pulse {
-        0%,
-        100% {
-          transform: scale(1) rotate(0deg);
-          opacity: 0.3;
-        }
-        50% {
-          transform: scale(1.1) rotate(5deg);
-          opacity: 0.5;
-        }
+        animation: float 20s ease-in-out infinite;
+        border-radius: 50%;
       }
 
       .hero-section::after {
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: linear-gradient(
-          90deg,
-          var(--zoho-red),
-          var(--zoho-yellow),
-          var(--zoho-green),
-          var(--zoho-blue)
+        bottom: -50%;
+        left: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(25, 118, 210, 0.15) 0%,
+          transparent 70%
         );
-        background-size: 200% 100%;
-        animation: gradient-flow 3s linear infinite;
+        animation: float 25s ease-in-out infinite reverse;
+        border-radius: 50%;
       }
 
-      @keyframes gradient-flow {
-        0% {
-          background-position: 0% 50%;
-        }
+      @keyframes float {
+        0%,
         100% {
-          background-position: 200% 50%;
+          transform: translate(0, 0) rotate(0deg);
+        }
+        50% {
+          transform: translate(30px, -30px) rotate(5deg);
         }
       }
 
@@ -252,863 +194,500 @@
         z-index: 2;
       }
 
-      .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        background: rgba(255, 224, 4, 0.2);
-        color: var(--zoho-yellow);
-        padding: 0.6rem 1.8rem;
-        border-radius: 50px;
-        font-weight: 600;
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-        border: 2px solid rgba(255, 224, 4, 0.4);
-        backdrop-filter: blur(10px);
-        animation: badge-glow 2s infinite ease-in-out;
-      }
-
-      @keyframes badge-glow {
-        0%,
-        100% {
-          box-shadow: 0 0 20px rgba(255, 224, 4, 0.3);
-        }
-        50% {
-          box-shadow: 0 0 40px rgba(255, 224, 4, 0.6);
-        }
-      }
-
-      .hero-badge i {
-        animation: spin 3s linear infinite;
-      }
-
-      @keyframes spin {
-        from {
-          transform: rotate(0deg);
-        }
-        to {
-          transform: rotate(360deg);
-        }
-      }
-
       .hero-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 4rem;
-        font-weight: 900;
-        color: #fff;
+        font-size: 3.5rem;
+        font-weight: 800;
         line-height: 1.2;
         margin-bottom: 1.5rem;
-        text-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
-      }
-
-      .hero-title span {
-        background: linear-gradient(
-          135deg,
-          var(--zoho-yellow),
-          var(--zoho-green)
-        );
+        background: var(--gradient-blue);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
-        display: inline-block;
-        animation: title-shimmer 3s infinite;
-      }
-
-      @keyframes title-shimmer {
-        0%,
-        100% {
-          filter: brightness(1);
-        }
-        50% {
-          filter: brightness(1.3);
-        }
       }
 
       .hero-subtitle {
-        font-size: 1.35rem;
-        color: rgba(255, 255, 255, 0.95);
+        font-size: 1.25rem;
+        color: var(--text-light);
         margin-bottom: 2.5rem;
         line-height: 1.8;
-        font-weight: 400;
+        max-width: 600px;
       }
 
-      .btn-primary-custom {
-        background: linear-gradient(135deg, var(--zoho-yellow), #ffd700);
-        color: #000;
-        padding: 1.1rem 2.8rem;
-        border: none;
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 1.1rem;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 15px 35px rgba(255, 224, 4, 0.4);
-        position: relative;
-        overflow: hidden;
+      .hero-stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        margin-top: 3rem;
+        max-width: 600px;
       }
 
-      .btn-primary-custom::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        transition:
-          width 0.6s,
-          height 0.6s;
-      }
-
-      .btn-primary-custom:hover::before {
-        width: 300px;
-        height: 300px;
-      }
-
-      .btn-primary-custom:hover {
-        transform: translateY(-5px) scale(1.05);
-        box-shadow: 0 20px 50px rgba(255, 224, 4, 0.5);
-      }
-
-      .btn-secondary-custom {
-        background: transparent;
-        color: #fff;
-        padding: 1.1rem 2.8rem;
-        border: 2px solid rgba(255, 255, 255, 0.8);
-        border-radius: 50px;
-        font-weight: 700;
-        font-size: 1.1rem;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .btn-secondary-custom::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: rgba(255, 255, 255, 0.2);
-        transition: left 0.5s ease;
-      }
-
-      .btn-secondary-custom:hover::before {
-        left: 100%;
-      }
-
-      .btn-secondary-custom:hover {
-        background: rgba(255, 255, 255, 0.1);
-        border-color: #fff;
-        transform: translateY(-5px);
-      }
-
-      /* Floating Icons Animation */
-      .hero-floating-icons {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-      }
-
-      .floating-icon {
-        position: absolute;
-        font-size: 2rem;
-        color: rgba(255, 255, 255, 0.1);
-        animation: float-icon 20s infinite ease-in-out;
-      }
-
-      .floating-icon:nth-child(1) {
-        top: 10%;
-        left: 10%;
-        animation-delay: 0s;
-      }
-      .floating-icon:nth-child(2) {
-        top: 20%;
-        right: 15%;
-        animation-delay: 2s;
-      }
-      .floating-icon:nth-child(3) {
-        top: 60%;
-        left: 5%;
-        animation-delay: 4s;
-      }
-      .floating-icon:nth-child(4) {
-        top: 70%;
-        right: 10%;
-        animation-delay: 6s;
-      }
-      .floating-icon:nth-child(5) {
-        top: 40%;
-        right: 25%;
-        animation-delay: 8s;
-      }
-
-      @keyframes float-icon {
-        0%,
-        100% {
-          transform: translateY(0px) rotate(0deg);
-          opacity: 0.3;
-        }
-        25% {
-          transform: translateY(-30px) rotate(5deg);
-          opacity: 0.5;
-        }
-        50% {
-          transform: translateY(-60px) rotate(-5deg);
-          opacity: 0.4;
-        }
-        75% {
-          transform: translateY(-30px) rotate(3deg);
-          opacity: 0.6;
-        }
-      }
-
-      /* Enhanced Stats Section */
-      .stats-section {
-        background: var(--light-gray);
-        padding: 5rem 0;
-        border-top: 1px solid #e0e0e0;
-        position: relative;
-      }
-
-      .stat-card {
+      .stat-item {
         text-align: center;
-        padding: 2.5rem 1.5rem;
-        background: #fff;
-        border-radius: 20px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
+        padding: 1.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        border-radius: 15px;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
       }
 
-      .stat-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(9, 116, 176, 0.1),
-          transparent
-        );
-        transition: left 0.8s ease;
-      }
-
-      .stat-card:hover::before {
-        left: 100%;
-      }
-
-      .stat-card:hover {
-        transform: translateY(-15px);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
-      }
-
-      .stat-icon {
-        font-size: 3rem;
-        margin-bottom: 1rem;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+      .stat-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--light-blue);
       }
 
       .stat-number {
-        font-family: "Poppins", sans-serif;
-        font-size: 3.8rem;
-        font-weight: 900;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--primary-blue);
+        display: block;
         margin-bottom: 0.5rem;
-        line-height: 1;
       }
 
       .stat-label {
-        font-size: 1.1rem;
-        color: var(--medium-gray);
-        font-weight: 600;
-        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        color: var(--text-light);
+        font-weight: 500;
       }
 
-      /* Enhanced Services Section */
-      .services-section {
-        padding: 7rem 0;
-        background: #fff;
+      .hero-image {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        filter: drop-shadow(0 20px 40px rgba(21, 101, 192, 0.2));
+        animation: floatImage 6s ease-in-out infinite;
+        border-radius: 20px;
+      }
+
+      @keyframes floatImage {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      section {
+        padding: 80px 0;
         position: relative;
       }
 
       .section-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 3rem;
-        font-weight: 800;
-        color: #000;
+        font-size: 2.5rem;
         margin-bottom: 1rem;
+        color: var(--text-dark);
         text-align: center;
-        position: relative;
-        display: inline-block;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100px;
-        height: 4px;
-        background: var(--gradient-primary);
-        border-radius: 2px;
       }
 
       .section-subtitle {
-        font-size: 1.25rem;
-        color: var(--medium-gray);
+        font-size: 1.15rem;
+        color: var(--text-light);
         text-align: center;
-        margin-bottom: 5rem;
+        margin-bottom: 3rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
       }
 
-      .service-card {
-        background: #fff;
-        border: 2px solid #f0f0f0;
+      .feature-card {
+        background: white;
         border-radius: 20px;
-        padding: 3rem;
+        padding: 2.5rem;
         height: 100%;
+        border: 2px solid var(--border-light);
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
         overflow: hidden;
       }
 
-      .service-card::before {
+      .feature-card::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
-        width: 5px;
-        height: 0;
-        background: var(--gradient-primary);
-        transition: height 0.4s ease;
-      }
-
-      .service-card::after {
-        content: "";
-        position: absolute;
-        top: -50%;
-        right: -50%;
         width: 100%;
-        height: 100%;
-        background: radial-gradient(
-          circle,
-          rgba(9, 116, 176, 0.05) 0%,
-          transparent 70%
-        );
-        opacity: 0;
-        transition: opacity 0.4s ease;
+        height: 4px;
+        background: var(--gradient-blue);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
       }
 
-      .service-card:hover::before {
-        height: 100%;
+      .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--light-blue);
       }
 
-      .service-card:hover::after {
-        opacity: 1;
+      .feature-card:hover::before {
+        transform: scaleX(1);
       }
 
-      .service-card:hover {
-        transform: translateY(-15px);
-        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
-        border-color: var(--zoho-blue);
-      }
-
-      .service-icon {
-        width: 70px;
-        height: 70px;
-        background: var(--gradient-primary);
+      .feature-image {
+        width: 100%;
+        height: 180px;
+        background: var(--gradient-soft);
         border-radius: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
-        color: #fff;
         margin-bottom: 1.5rem;
-        transition: all 0.4s ease;
-      }
-
-      .service-card:hover .service-icon {
-        transform: scale(1.1) rotate(5deg);
-      }
-
-      .service-number {
-        font-family: "Poppins", sans-serif;
-        font-size: 3.5rem;
-        font-weight: 900;
-        color: rgba(9, 116, 176, 0.08);
-        margin-bottom: 1rem;
-        line-height: 1;
-      }
-
-      .service-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-        color: #000;
-        margin-bottom: 1.2rem;
-      }
-
-      .service-description {
-        font-size: 1.05rem;
-        color: var(--medium-gray);
-        line-height: 1.8;
-      }
-
-      /* Enhanced Why Choose Us Section */
-      .why-choose-section {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 7rem 0;
-        position: relative;
         overflow: hidden;
-      }
-
-      .why-choose-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 40%;
-        height: 100%;
-        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(9,116,176,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        opacity: 0.5;
-      }
-
-      .feature-box {
-        background: #fff;
-        padding: 2.5rem;
-        border-radius: 16px;
-        margin-bottom: 2rem;
-        border-left: 5px solid var(--zoho-blue);
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         position: relative;
-        overflow: hidden;
       }
 
-      .feature-box::before {
-        content: "";
+      .feature-image img {
+        width: 80%;
+        height: 80%;
+        object-fit: contain;
+        transition: all 0.3s ease;
+      }
+
+      .feature-card:hover .feature-image img {
+        transform: scale(1.1);
+      }
+
+      .feature-number {
         position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-          90deg,
-          transparent,
-          rgba(9, 116, 176, 0.05),
-          transparent
-        );
-        transition: left 0.6s ease;
-      }
-
-      .feature-box:hover::before {
-        left: 100%;
-      }
-
-      .feature-box:hover {
-        transform: translateX(15px) scale(1.02);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        border-left-color: var(--zoho-green);
-      }
-
-      .feature-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(
-          135deg,
-          var(--zoho-blue),
-          var(--zoho-green)
-        );
-        border-radius: 12px;
+        top: 15px;
+        right: 15px;
+        width: 40px;
+        height: 40px;
+        background: var(--primary-blue);
+        color: white;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.8rem;
-        color: #fff;
-        margin-bottom: 1.2rem;
-        transition: transform 0.4s ease;
-      }
-
-      .feature-box:hover .feature-icon {
-        transform: rotate(360deg);
+        font-weight: 700;
+        font-size: 1.1rem;
       }
 
       .feature-title {
-        font-family: "Poppins", sans-serif;
         font-size: 1.4rem;
-        font-weight: 700;
-        color: #000;
         margin-bottom: 1rem;
+        color: var(--text-dark);
       }
 
-      .feature-text {
-        font-size: 1.05rem;
-        color: var(--medium-gray);
+      .feature-description {
+        color: var(--text-light);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-link {
+        color: var(--primary-blue);
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        transition: all 0.3s ease;
+      }
+
+      .feature-link:hover {
+        gap: 1rem;
+        color: var(--secondary-blue);
+      }
+
+      .feature-link::after {
+        content: "→";
+        transition: transform 0.3s ease;
+      }
+
+      .ai-section {
+        background: linear-gradient(
+          135deg,
+          #0d47a1 0%,
+          #1565c0 50%,
+          #1976d2 100%
+        );
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .ai-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        opacity: 0.3;
+      }
+
+      .ai-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .ai-feature-box {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .ai-feature-box:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-5px);
+      }
+
+      .ai-feature-box h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .ai-feature-box p {
+        opacity: 0.9;
         line-height: 1.7;
         margin: 0;
       }
 
-      /* Enhanced Industries Section */
-      .industries-section {
-        padding: 7rem 0;
-        background: #fff;
-      }
-
-      .industry-card {
-        background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-        border-radius: 16px;
-        padding: 2.5rem;
-        text-align: center;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        border: 2px solid transparent;
-        height: 100%;
+      .ai-image-container {
         position: relative;
-        overflow: hidden;
+        text-align: center;
       }
 
-      .industry-card::before {
-        content: "";
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 0;
-        height: 0;
-        background: radial-gradient(
-          circle,
-          rgba(33, 158, 74, 0.1) 0%,
-          transparent 70%
-        );
-        transform: translate(-50%, -50%);
-        transition: all 0.6s ease;
-        border-radius: 50%;
+      .ai-image-container img {
+        max-width: 100%;
+        filter: drop-shadow(0 10px 30px rgba(255, 255, 255, 0.2));
       }
 
-      .industry-card:hover::before {
-        width: 300px;
-        height: 300px;
+      .functions-section {
+        background: var(--bg-light);
       }
 
-      .industry-card:hover {
-        border-color: var(--zoho-green);
-        transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+      .function-category {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        height: 100%;
+        transition: all 0.3s ease;
+        border: 2px solid var(--border-light);
+        box-shadow: var(--shadow-sm);
       }
 
-      .industry-icon {
+      .function-category:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--light-blue);
+      }
+
+      .category-header {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid var(--border-light);
+      }
+
+      .category-image {
         width: 80px;
         height: 80px;
-        background: var(--gradient-primary);
+        background: var(--gradient-soft);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .function-category:hover .category-image {
+        background: var(--gradient-blue);
+        transform: scale(1.05);
+      }
+
+      .category-image img {
+        width: 50px;
+        height: 50px;
+        object-fit: contain;
+      }
+
+      .category-title {
+        font-size: 1.3rem;
+        margin: 0;
+        color: var(--text-dark);
+      }
+
+      .function-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .function-list li {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid var(--border-light);
+        transition: all 0.3s ease;
+      }
+
+      .function-list li:last-child {
+        border-bottom: none;
+      }
+
+      .function-list li:hover {
+        padding-left: 1rem;
+        background: rgba(21, 101, 192, 0.03);
+      }
+
+      .function-list a {
+        color: var(--text-dark);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 0.95rem;
+        transition: color 0.3s ease;
+      }
+
+      .function-list a::before {
+        content: "→";
+        color: var(--primary-blue);
+        font-weight: bold;
+        transition: transform 0.3s ease;
+      }
+
+      .function-list a:hover {
+        color: var(--primary-blue);
+      }
+
+      .benefits-section {
+        background: white;
+      }
+
+      .benefit-card {
+        text-align: center;
+        padding: 2rem;
+        transition: all 0.3s ease;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-8px);
+      }
+
+      .benefit-image {
+        width: 120px;
+        height: 120px;
+        background: var(--gradient-soft);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2.5rem;
-        color: #fff;
         margin: 0 auto 1.5rem;
         transition: all 0.4s ease;
+        box-shadow: var(--shadow-sm);
       }
 
-      .industry-card:hover .industry-icon {
-        transform: scale(1.15) rotate(360deg);
+      .benefit-card:hover .benefit-image {
+        background: var(--gradient-blue);
+        transform: scale(1.1);
+        box-shadow: var(--shadow-lg);
       }
 
-      .industry-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: #000;
+      .benefit-image img {
+        width: 70px;
+        height: 70px;
+        object-fit: contain;
+      }
+
+      .benefit-card h4 {
+        font-size: 1.3rem;
         margin-bottom: 1rem;
+        color: var(--text-dark);
       }
 
-      .industry-text {
-        font-size: 1rem;
-        color: var(--medium-gray);
+      .benefit-card p {
+        color: var(--text-light);
         line-height: 1.7;
       }
 
-      /* Enhanced Process Section */
-      .process-section {
-        padding: 7rem 0;
-        background: var(--dark-bg);
-        color: #fff;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .process-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
-        opacity: 0.5;
-      }
-
-      .process-step {
-        position: relative;
-        padding-left: 5rem;
-        margin-bottom: 4rem;
-      }
-
-      .step-number {
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(
-          135deg,
-          var(--zoho-yellow),
-          var(--zoho-green)
-        );
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: "Poppins", sans-serif;
-        font-size: 1.8rem;
-        font-weight: 900;
-        color: #000;
-        box-shadow: 0 10px 30px rgba(255, 224, 4, 0.4);
-        transition: all 0.4s ease;
-      }
-
-      .process-step:hover .step-number {
-        transform: scale(1.15) rotate(360deg);
-        box-shadow: 0 15px 40px rgba(255, 224, 4, 0.6);
-      }
-
-      .step-content {
-        background: rgba(255, 255, 255, 0.05);
-        padding: 2rem;
-        border-radius: 12px;
-        border-left: 3px solid var(--zoho-blue);
-        transition: all 0.4s ease;
-      }
-
-      .step-content:hover {
-        background: rgba(255, 255, 255, 0.08);
-        transform: translateX(10px);
-      }
-
-      .step-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.6rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-
-      .step-description {
-        font-size: 1.05rem;
-        color: rgba(255, 255, 255, 0.85);
-        line-height: 1.8;
-      }
-
-      /* Enhanced Products Section */
-      .products-section {
-        padding: 7rem 0;
-        background: var(--light-gray);
-      }
-
-      .product-card {
-        background: #fff;
-        border-radius: 16px;
-        padding: 2.5rem;
-        margin-bottom: 2rem;
-        border-left: 5px solid var(--zoho-red);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        position: relative;
-        overflow: hidden;
-      }
-
-      .product-card::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100px;
-        height: 100px;
-        background: radial-gradient(
-          circle,
-          rgba(206, 34, 50, 0.1) 0%,
-          transparent 70%
-        );
-        transition: all 0.4s ease;
-      }
-
-      .product-card:hover::before {
-        width: 200px;
-        height: 200px;
-      }
-
-      .product-card:hover {
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-        transform: translateY(-10px) scale(1.02);
-        border-left-color: var(--zoho-green);
-      }
-
-      .product-icon {
-        width: 60px;
-        height: 60px;
-        background: linear-gradient(135deg, var(--zoho-red), var(--zoho-blue));
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.8rem;
-        color: #fff;
-        margin-bottom: 1.2rem;
-        transition: transform 0.4s ease;
-      }
-
-      .product-card:hover .product-icon {
-        transform: scale(1.1) rotate(-10deg);
-      }
-
-      .product-name {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--zoho-blue);
-        margin-bottom: 1rem;
-      }
-
-      .product-description {
-        font-size: 1.05rem;
-        color: var(--medium-gray);
-        line-height: 1.7;
-      }
-
-      /* Enhanced Testimonials Section */
       .testimonials-section {
-        padding: 7rem 0;
-        background: #fff;
-        position: relative;
+        background: var(--bg-light);
       }
 
       .testimonial-card {
-        background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+        background: white;
         border-radius: 20px;
-        padding: 3rem;
+        padding: 2.5rem;
         height: 100%;
         position: relative;
-        border: 2px solid transparent;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        overflow: hidden;
-      }
-
-      .testimonial-card::before {
-        content: "";
-        position: absolute;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(
-          circle,
-          rgba(9, 116, 176, 0.05) 0%,
-          transparent 70%
-        );
-        opacity: 0;
-        transition: opacity 0.4s ease;
-      }
-
-      .testimonial-card:hover::before {
-        opacity: 1;
+        box-shadow: var(--shadow-sm);
+        transition: all 0.3s ease;
+        border: 2px solid var(--border-light);
       }
 
       .testimonial-card:hover {
-        border-color: var(--zoho-blue);
-        transform: translateY(-10px) scale(1.03);
-        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        transform: translateY(-8px);
+        box-shadow: var(--shadow-lg);
+        border-color: var(--light-blue);
       }
 
-      .testimonial-quote {
-        font-size: 1.15rem;
-        color: #333;
-        line-height: 1.9;
-        margin-bottom: 2rem;
-        font-style: italic;
-        position: relative;
-        padding-left: 2rem;
-      }
-
-      .testimonial-quote::before {
-        content: '"';
-        position: absolute;
-        left: 0;
-        top: -10px;
+      .quote-mark {
         font-size: 4rem;
-        color: var(--zoho-blue);
+        color: var(--light-blue);
         opacity: 0.2;
-        font-family: Georgia, serif;
+        line-height: 1;
+        margin-bottom: 1rem;
       }
 
-      .testimonial-author-section {
+      .testimonial-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-dark);
+        margin-bottom: 2rem;
+        position: relative;
+        z-index: 2;
+      }
+
+      .testimonial-author {
         display: flex;
         align-items: center;
         gap: 1rem;
       }
 
-      .testimonial-avatar {
+      .author-avatar {
         width: 60px;
         height: 60px;
-        background: var(--gradient-primary);
         border-radius: 50%;
+        background: var(--gradient-blue);
         display: flex;
         align-items: center;
         justify-content: center;
+        color: white;
         font-size: 1.5rem;
         font-weight: 700;
-        color: #fff;
+        flex-shrink: 0;
       }
 
-      .testimonial-author {
-        font-family: "Poppins", sans-serif;
+      .author-info h5 {
+        margin: 0;
         font-size: 1.1rem;
-        font-weight: 700;
-        color: #000;
-        margin-bottom: 0.25rem;
+        color: var(--text-dark);
       }
 
-      .testimonial-position {
-        font-size: 0.95rem;
-        color: var(--medium-gray);
+      .author-info p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: var(--text-light);
       }
 
-      .testimonial-rating {
-        margin-top: 1rem;
-        color: var(--zoho-yellow);
-        font-size: 1.2rem;
-      }
-
-      /* Enhanced CTA Section */
       .cta-section {
-        background: linear-gradient(
-          135deg,
-          var(--zoho-blue) 0%,
-          var(--zoho-green) 100%
-        );
-        padding: 6rem 0;
-        text-align: center;
-        color: #fff;
+        background: var(--gradient-blue);
+        color: white;
         position: relative;
         overflow: hidden;
       }
@@ -1116,304 +695,119 @@
       .cta-section::before {
         content: "";
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="waves" width="100" height="50" patternUnits="userSpaceOnUse"><path d="M0 25 Q 25 10, 50 25 T 100 25" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="2"/></pattern></defs><rect width="100" height="100" fill="url(%23waves)"/></svg>');
-        animation: wave-move 20s linear infinite;
+        top: -50%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 0%,
+          transparent 70%
+        );
+        animation: float 15s ease-in-out infinite;
       }
 
-      @keyframes wave-move {
-        0% {
-          background-position: 0 0;
-        }
-        100% {
-          background-position: 100px 0;
-        }
-      }
-
-      .cta-title {
-        font-family: "Poppins", sans-serif;
-        font-size: 3rem;
-        font-weight: 800;
-        margin-bottom: 1.5rem;
+      .cta-content {
         position: relative;
         z-index: 2;
-      }
-
-      .cta-subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 3rem;
-        opacity: 0.95;
-        position: relative;
-        z-index: 2;
-      }
-
-      /* Enhanced Footer */
-      .footer {
-        background: var(--dark-bg);
-        color: rgba(255, 255, 255, 0.8);
-        padding: 5rem 0 2rem;
-        position: relative;
-      }
-
-      .footer::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: var(--gradient-primary);
-      }
-
-      .footer-brand {
-        font-family: "Poppins", sans-serif;
-        font-size: 2rem;
-        font-weight: 800;
-        background: var(--gradient-primary);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        margin-bottom: 1.5rem;
-      }
-
-      .footer-text {
-        font-size: 1rem;
-        line-height: 1.8;
-        margin-bottom: 2rem;
-      }
-
-      .footer-heading {
-        font-family: "Poppins", sans-serif;
-        font-size: 1.2rem;
-        font-weight: 700;
-        color: var(--zoho-yellow);
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.5rem;
-      }
-
-      .footer-heading::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 40px;
-        height: 2px;
-        background: var(--zoho-yellow);
-      }
-
-      .footer-links {
-        list-style: none;
-        padding: 0;
-      }
-
-      .footer-links li {
-        margin-bottom: 0.9rem;
-        transition: transform 0.3s ease;
-      }
-
-      .footer-links li:hover {
-        transform: translateX(5px);
-      }
-
-      .footer-links a {
-        color: rgba(255, 255, 255, 0.7);
-        text-decoration: none;
-        transition: color 0.3s ease;
-        font-size: 1rem;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .footer-links a::before {
-        content: "→";
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-
-      .footer-links a:hover::before {
-        opacity: 1;
-      }
-
-      .footer-links a:hover {
-        color: var(--zoho-yellow);
-      }
-
-      .footer-social {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-      }
-
-      .social-icon {
-        width: 45px;
-        height: 45px;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        transition: all 0.3s ease;
-        font-size: 1.2rem;
-      }
-
-      .social-icon:hover {
-        background: var(--zoho-blue);
-        transform: translateY(-5px) rotate(360deg);
-      }
-
-      .footer-bottom {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        margin-top: 4rem;
-        padding-top: 2rem;
         text-align: center;
-        font-size: 0.95rem;
-        color: rgba(255, 255, 255, 0.6);
       }
 
-      /* Back to Top Button */
-      .back-to-top {
+      .cta-content h2 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-content p {
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+        opacity: 0.95;
+      }
+
+      .btn-white-custom {
+        background: white;
+        color: var(--primary-blue);
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+      }
+
+      .btn-white-custom:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn-outline-light-custom {
+        background: transparent;
+        color: white;
+        padding: 1rem 3rem;
+        border-radius: 50px;
+        font-weight: 700;
+        font-size: 1.1rem;
+        border: 2px solid white;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .btn-outline-light-custom:hover {
+        background: white;
+        color: var(--primary-blue);
+        transform: translateY(-3px);
+      }
+
+     
+
+      .scroll-top {
         position: fixed;
         bottom: 30px;
         right: 30px;
-        width: 55px;
-        height: 55px;
-        background: linear-gradient(
-          135deg,
-          var(--zoho-blue),
-          var(--zoho-green)
-        );
-        color: #fff;
-        border: none;
+        width: 50px;
+        height: 50px;
+        background: var(--gradient-blue);
+        color: white;
         border-radius: 50%;
-        font-size: 1.5rem;
-        cursor: pointer;
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
         z-index: 1000;
-        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 5px 20px rgba(21, 101, 192, 0.4);
       }
 
-      .back-to-top:hover {
-        transform: translateY(-8px) scale(1.1);
-        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.4);
+      .scroll-top.show {
+        opacity: 1;
+        visibility: visible;
       }
 
-      .back-to-top.show {
-        display: flex;
-        animation: bounce 2s infinite;
+      .scroll-top:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(21, 101, 192, 0.5);
       }
 
-      @keyframes bounce {
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
-          transform: translateY(0);
-        }
-        40% {
-          transform: translateY(-10px);
-        }
-        60% {
-          transform: translateY(-5px);
-        }
-      }
-
-      /* Progress Bar */
-      .scroll-progress {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 0;
-        height: 4px;
-        background: var(--gradient-primary);
-        z-index: 10000;
-        transition: width 0.1s ease;
-      }
-
-      /* Responsive Design */
-      @media (max-width: 992px) {
-        .hero-title {
-          font-size: 3rem;
-        }
-
-        .section-title {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .hero-title {
-          font-size: 2.5rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1.1rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
-
-        .stat-number {
-          font-size: 2.8rem;
-        }
-
-        .service-card {
-          margin-bottom: 2rem;
-        }
-
-        .process-step {
-          padding-left: 4rem;
-        }
-
-        .step-number {
-          width: 50px;
-          height: 50px;
-          font-size: 1.5rem;
-        }
-
-        .btn-primary-custom,
-        .btn-secondary-custom {
-          padding: 1rem 2rem;
-          font-size: 1rem;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .hero-title {
-          font-size: 2rem;
-        }
-
-        .cta-title {
-          font-size: 2rem;
-        }
-      }
-
-      /* Loading Animation */
       .loading-overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background: #fff;
-        z-index: 10000;
+        background: white;
         display: flex;
         align-items: center;
         justify-content: center;
+        z-index: 9999;
         transition: opacity 0.5s ease;
       }
 
-      .loading-overlay.hide {
+      .loading-overlay.hidden {
         opacity: 0;
         pointer-events: none;
       }
@@ -1421,730 +815,736 @@
       .loader {
         width: 60px;
         height: 60px;
-        border: 5px solid #f3f3f3;
-        border-top: 5px solid var(--zoho-blue);
+        border: 5px solid var(--light-blue);
+        border-top-color: var(--primary-blue);
         border-radius: 50%;
         animation: spin 1s linear infinite;
       }
 
       @keyframes spin {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
+        to {
           transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 992px) {
+        .hero-title {
+          font-size: 2.8rem;
+        }
+
+        .hero-stats {
+          grid-template-columns: 1fr;
+        }
+
+        .section-title {
+          font-size: 2.2rem;
+        }
+
+        .cta-content h2 {
+          font-size: 2.2rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.2rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .cta-content h2 {
+          font-size: 1.8rem;
+        }
+
+        .cta-content p {
+          font-size: 1.1rem;
+        }
+
+        .hero-stats {
+          grid-template-columns: 1fr;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Loading Overlay -->
     <div class="loading-overlay" id="loadingOverlay">
       <div class="loader"></div>
     </div>
+ <!-- Header -->
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+          <div class="logo-container navbar-brand">
+            <img src="https://www.zolytics.in/files/logo.png" alt="Zolytics" style="height: 90px;"/>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdTQEbDWijJJOsGV6OlCOLqso6XYRiHXzCPw&s"
+              alt="Zoho ERP"
+              style="height: 50px"
+            />
+          </div>
+        </div>
+      </nav>
+    </header>
 
-    <!-- Scroll Progress Bar -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Background Particles -->
-    <div class="particles-bg" id="particlesBg"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#"
-          ><i class="fas fa-cube"></i> Zoho ERP</a
-        >
-        <a class="zolytics-brand" href="#">Zolytics</a>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
     <section class="hero-section">
-      <div class="hero-floating-icons">
-        <i class="floating-icon fas fa-chart-line"></i>
-        <i class="floating-icon fas fa-cogs"></i>
-        <i class="floating-icon fas fa-database"></i>
-        <i class="floating-icon fas fa-cloud"></i>
-        <i class="floating-icon fas fa-shield-alt"></i>
-      </div>
       <div class="container">
         <div class="row align-items-center">
-          <div class="col-lg-7">
-            <div class="hero-content">
-              <span class="hero-badge" data-aos="fade-down">
-                <i class="fas fa-award"></i> Certified Zoho Premium Partner
-              </span>
-              <h1 class="hero-title" data-aos="fade-up" data-aos-delay="100">
-                Transform Your Business with <span>Zoho ERP</span>
-              </h1>
-              <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">
-                Expert implementation, customization, and consulting services
-                for businesses ready to scale. We help you harness the full
-                power of Zoho's unified ERP platform.
-              </p>
-              <div
-                class="d-flex gap-3 flex-wrap"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <button class="btn btn-primary-custom">
-                  <i class="fas fa-calendar-alt"></i> Schedule Consultation
-                </button>
-                <button class="btn btn-secondary-custom">
-                  <i class="fas fa-file-alt"></i> View Case Studies
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="stat-card">
-              <div class="stat-icon">
-                <i class="fas fa-project-diagram"></i>
-              </div>
-              <div class="stat-number" data-target="300">0</div>
-              <div class="stat-label">Successful Implementations</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fas fa-industry"></i></div>
-              <div class="stat-number" data-target="50">0</div>
-              <div class="stat-label">Industry Verticals</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fas fa-smile"></i></div>
-              <div class="stat-number" data-target="98">0</div>
-              <div class="stat-label">Client Satisfaction Rate</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="stat-card">
-              <div class="stat-icon"><i class="fas fa-clock"></i></div>
-              <div class="stat-number" data-target="15">0</div>
-              <div class="stat-label">Years of Experience</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Services Section -->
-    <section class="services-section">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">
-          Our Comprehensive Services
-        </h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          End-to-end Zoho ERP solutions tailored to your business needs
-        </p>
-
-        <div class="row g-4">
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="service-card">
-              <div class="service-icon"><i class="fas fa-rocket"></i></div>
-              <div class="service-number">01</div>
-              <h3 class="service-title">ERP Implementation & Deployment</h3>
-              <p class="service-description">
-                Complete setup and configuration of Zoho ERP modules including
-                Finance, Supply Chain, Billing, Commerce, and Payroll. We ensure
-                seamless migration from legacy systems with zero data loss.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="service-card">
-              <div class="service-icon"><i class="fas fa-code"></i></div>
-              <div class="service-number">02</div>
-              <h3 class="service-title">Custom Module Development</h3>
-              <p class="service-description">
-                Leverage Zoho Creator's low-code platform to build custom
-                applications, workflows, and automations that perfectly match
-                your unique business processes and requirements.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="service-card">
-              <div class="service-icon"><i class="fas fa-plug"></i></div>
-              <div class="service-number">03</div>
-              <h3 class="service-title">Integration Services</h3>
-              <p class="service-description">
-                Connect Zoho ERP with your existing tools including CRM,
-                e-commerce platforms, payment gateways, third-party apps, and
-                legacy systems for unified operations.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-graduation-cap"></i>
-              </div>
-              <div class="service-number">04</div>
-              <h3 class="service-title">Training & User Adoption</h3>
-              <p class="service-description">
-                Comprehensive training programs for your team including
-                role-based sessions, documentation, and ongoing support to
-                ensure maximum system utilization and ROI.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="service-card">
-              <div class="service-icon"><i class="fas fa-lightbulb"></i></div>
-              <div class="service-number">05</div>
-              <h3 class="service-title">Process Optimization & Consulting</h3>
-              <p class="service-description">
-                Strategic consulting to identify process gaps, automate
-                workflows, and optimize your operations using Zoho's intelligent
-                automation and Zia AI capabilities.
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-4 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="service-card">
-              <div class="service-icon"><i class="fas fa-headset"></i></div>
-              <div class="service-number">06</div>
-              <h3 class="service-title">Ongoing Support & Maintenance</h3>
-              <p class="service-description">
-                24/7 technical support, system monitoring, regular updates,
-                troubleshooting, and continuous optimization to keep your ERP
-                running at peak performance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section class="why-choose-section">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6" data-aos="fade-right">
-            <h2 class="section-title text-start">Why Partner With Us?</h2>
-            <p class="section-subtitle text-start">
-              We deliver measurable results through expertise and dedication
+          <div class="col-lg-6 hero-content" data-aos="fade-right">
+            <h1 class="hero-title">
+              Transform Your Consulting Business with AI-Powered ERP
+            </h1>
+            <p class="hero-subtitle">
+              Streamline operations, automate workflows, and unlock intelligent
+              insights with Zoho's cloud-based enterprise resource planning
+              platform built for modern consulting firms.
             </p>
+            <div class="mb-4"></div>
+            <div class="hero-stats">
+              <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <span class="stat-label">Integrated Apps</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">40%</span>
+                <span class="stat-label">Cost Savings</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">99.9%</span>
+                <span class="stat-label">Uptime SLA</span>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-6">
-            <div class="feature-box" data-aos="fade-left" data-aos-delay="100">
-              <div class="feature-icon"><i class="fas fa-certificate"></i></div>
-              <h4 class="feature-title">Certified Zoho Expertise</h4>
-              <p class="feature-text">
-                Our team holds advanced Zoho certifications and has deep product
-                knowledge across the entire Zoho ecosystem, ensuring
-                best-in-class implementations.
-              </p>
-            </div>
-            <div class="feature-box" data-aos="fade-left" data-aos-delay="200">
-              <div class="feature-icon"><i class="fas fa-building"></i></div>
-              <h4 class="feature-title">Industry-Specific Solutions</h4>
-              <p class="feature-text">
-                We've successfully implemented Zoho ERP across manufacturing,
-                retail, healthcare, finance, logistics, and professional
-                services with tailored solutions for each industry.
-              </p>
-            </div>
-            <div class="feature-box" data-aos="fade-left" data-aos-delay="300">
-              <div class="feature-icon">
-                <i class="fas fa-tachometer-alt"></i>
-              </div>
-              <h4 class="feature-title">Faster Implementation Timeline</h4>
-              <p class="feature-text">
-                Our proven ZBlitz framework reduces implementation time by 40%
-                compared to traditional approaches, getting you operational
-                faster without compromising quality.
-              </p>
-            </div>
-            <div class="feature-box" data-aos="fade-left" data-aos-delay="400">
-              <div class="feature-icon">
-                <i class="fas fa-hands-helping"></i>
-              </div>
-              <h4 class="feature-title">Priority Zoho Support Access</h4>
-              <p class="feature-text">
-                As a Premium Partner, we provide direct access to Zoho's product
-                teams for faster issue resolution and early access to new
-                features and updates.
-              </p>
-            </div>
+          <div class="col-lg-6 hero-image" data-aos="fade-left">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Crect fill='%231565C0' width='800' height='600' rx='20'/%3E%3Cg opacity='0.2'%3E%3Crect fill='%23fff' x='50' y='50' width='700' height='80' rx='10'/%3E%3Crect fill='%23fff' x='50' y='150' width='340' height='400' rx='10'/%3E%3Crect fill='%23fff' x='410' y='150' width='340' height='190' rx='10'/%3E%3Crect fill='%23fff' x='410' y='360' width='340' height='190' rx='10'/%3E%3C/g%3E%3Ctext x='400' y='320' font-family='Arial' font-size='48' fill='%23fff' text-anchor='middle' font-weight='bold'%3EERP Dashboard%3C/text%3E%3C/svg%3E"
+              alt="ERP Dashboard"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Industries Section -->
-    <section class="industries-section">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Industries We Serve</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Specialized Zoho ERP solutions across diverse sectors
-        </p>
-
-        <div class="row g-4">
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="industry-card">
-              <div class="industry-icon"><i class="fas fa-industry"></i></div>
-              <h4 class="industry-title">Manufacturing</h4>
-              <p class="industry-text">
-                Production planning, inventory management, supply chain
-                optimization, and quality control systems
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="industry-card">
-              <div class="industry-icon">
-                <i class="fas fa-shopping-cart"></i>
-              </div>
-              <h4 class="industry-title">Retail & E-commerce</h4>
-              <p class="industry-text">
-                Omnichannel commerce, POS integration, inventory tracking, and
-                customer experience management
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="industry-card">
-              <div class="industry-icon"><i class="fas fa-heartbeat"></i></div>
-              <h4 class="industry-title">Healthcare</h4>
-              <p class="industry-text">
-                Patient management, billing compliance, supply chain, and
-                HIPAA-compliant data handling
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <div class="industry-card">
-              <div class="industry-icon">
-                <i class="fas fa-dollar-sign"></i>
-              </div>
-              <h4 class="industry-title">Financial Services</h4>
-              <p class="industry-text">
-                Multi-currency management, revenue recognition, compliance
-                reporting, and expense tracking
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="industry-card">
-              <div class="industry-icon"><i class="fas fa-briefcase"></i></div>
-              <h4 class="industry-title">Professional Services</h4>
-              <p class="industry-text">
-                Project management, time tracking, resource allocation, and
-                client billing automation
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="industry-card">
-              <div class="industry-icon"><i class="fas fa-truck"></i></div>
-              <h4 class="industry-title">Logistics & Distribution</h4>
-              <p class="industry-text">
-                Fleet management, route optimization, warehouse operations, and
-                delivery tracking
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="300"
-          >
-            <div class="industry-card">
-              <div class="industry-icon">
-                <i class="fas fa-graduation-cap"></i>
-              </div>
-              <h4 class="industry-title">Education</h4>
-              <p class="industry-text">
-                Student management, fee collection, academic operations, and
-                institutional reporting
-              </p>
-            </div>
-          </div>
-          <div
-            class="col-lg-3 col-md-6"
-            data-aos="fade-up"
-            data-aos-delay="400"
-          >
-            <div class="industry-card">
-              <div class="industry-icon"><i class="fas fa-building"></i></div>
-              <h4 class="industry-title">Real Estate</h4>
-              <p class="industry-text">
-                Property management, lease tracking, tenant billing, and
-                maintenance scheduling
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Implementation Process Section -->
-    <section class="process-section">
-      <div class="container">
-        <h2 class="section-title text-white" data-aos="fade-up">
-          Our Implementation Process
-        </h2>
-        <p
-          class="section-subtitle text-white"
-          data-aos="fade-up"
-          data-aos-delay="100"
-          style="color: rgba(255, 255, 255, 0.8)"
-        >
-          A proven methodology for successful Zoho ERP deployment
-        </p>
-
-        <div class="row mt-5">
-          <div class="col-lg-6">
-            <div
-              class="process-step"
-              data-aos="fade-right"
-              data-aos-delay="100"
-            >
-              <div class="step-number">1</div>
-              <div class="step-content">
-                <h4 class="step-title">Discovery & Requirements Analysis</h4>
-                <p class="step-description">
-                  We conduct comprehensive workshops with your team to
-                  understand business processes, pain points, and objectives.
-                  Detailed documentation of current workflows and future state
-                  requirements.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="process-step" data-aos="fade-left" data-aos-delay="200">
-              <div class="step-number">2</div>
-              <div class="step-content">
-                <h4 class="step-title">Solution Design & Planning</h4>
-                <p class="step-description">
-                  Custom solution architecture based on your needs. Module
-                  selection, integration mapping, data migration strategy, and
-                  project timeline with clear milestones and deliverables.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div
-              class="process-step"
-              data-aos="fade-right"
-              data-aos-delay="300"
-            >
-              <div class="step-number">3</div>
-              <div class="step-content">
-                <h4 class="step-title">Configuration & Development</h4>
-                <p class="step-description">
-                  System setup, custom module development using Zoho Creator,
-                  workflow automation, role-based access configuration, and
-                  integration with existing systems.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="process-step" data-aos="fade-left" data-aos-delay="400">
-              <div class="step-number">4</div>
-              <div class="step-content">
-                <h4 class="step-title">Data Migration & Testing</h4>
-                <p class="step-description">
-                  Secure data migration from legacy systems with validation.
-                  Comprehensive UAT, performance testing, and iterative
-                  refinement based on feedback.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div
-              class="process-step"
-              data-aos="fade-right"
-              data-aos-delay="500"
-            >
-              <div class="step-number">5</div>
-              <div class="step-content">
-                <h4 class="step-title">Training & Go-Live</h4>
-                <p class="step-description">
-                  Role-specific training sessions, documentation, and knowledge
-                  transfer. Phased rollout with on-site support during critical
-                  transition period.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="process-step" data-aos="fade-left" data-aos-delay="600">
-              <div class="step-number">6</div>
-              <div class="step-content">
-                <h4 class="step-title">Optimization & Support</h4>
-                <p class="step-description">
-                  Post-implementation review, continuous monitoring, performance
-                  optimization, and ongoing support with SLA-backed response
-                  times.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Zoho Products Section -->
-    <section class="products-section">
+    <section class="features-section" id="features">
       <div class="container">
         <h2 class="section-title" data-aos="fade-up">
-          Zoho ERP Modules We Implement
+          Comprehensive ERP Solutions for Consulting Firms
         </h2>
         <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Comprehensive suite covering all aspects of your business operations
-        </p>
-
-        <div class="row">
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="product-card">
-              <div class="product-icon"><i class="fas fa-calculator"></i></div>
-              <h4 class="product-name">Zoho Books - Financial Management</h4>
-              <p class="product-description">
-                Complete accounting solution with GST compliance, multi-currency
-                support, automated invoicing, expense tracking, bank
-                reconciliation, and advanced financial reporting aligned with
-                IFRS and ASC standards.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="product-card">
-              <div class="product-icon"><i class="fas fa-boxes"></i></div>
-              <h4 class="product-name">
-                Zoho Inventory - Supply Chain Management
-              </h4>
-              <p class="product-description">
-                Real-time inventory tracking across multiple warehouses,
-                automated reorder points, batch and serial number tracking,
-                barcode scanning, and seamless integration with sales and
-                purchasing.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="product-card">
-              <div class="product-icon"><i class="fas fa-store"></i></div>
-              <h4 class="product-name">Zoho Commerce - Omnichannel Retail</h4>
-              <p class="product-description">
-                Unified commerce platform for online stores, physical retail,
-                and marketplaces. Integrated POS, payment processing, order
-                management, and customer engagement tools.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="product-card">
-              <div class="product-icon"><i class="fas fa-users"></i></div>
-              <h4 class="product-name">Zoho People - HR & Payroll</h4>
-              <p class="product-description">
-                Complete HR management including employee records, attendance
-                tracking, leave management, performance reviews, and automated
-                payroll with EPF, ESI, TDS, and compliance.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="product-card">
-              <div class="product-icon">
-                <i class="fas fa-file-invoice-dollar"></i>
-              </div>
-              <h4 class="product-name">
-                Zoho Billing - Subscription Management
-              </h4>
-              <p class="product-description">
-                Automate the entire subscription lifecycle from quote to revenue
-                recognition. Recurring billing, proration, dunning management,
-                and seamless integration with finance.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="product-card">
-              <div class="product-icon"><i class="fas fa-chart-pie"></i></div>
-              <h4 class="product-name">
-                Zoho Analytics - Business Intelligence
-              </h4>
-              <p class="product-description">
-                Advanced analytics and reporting with AI-powered insights from
-                Zia. Custom dashboards, predictive analytics, and real-time
-                visibility across all business functions.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="product-card">
-              <div class="product-icon"><i class="fas fa-laptop-code"></i></div>
-              <h4 class="product-name">Zoho Creator - Custom Applications</h4>
-              <p class="product-description">
-                Low-code platform to build custom ERP modules, workflows, and
-                automations tailored to your unique business processes without
-                extensive coding.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-            <div class="product-card">
-              <div class="product-icon"><i class="fas fa-receipt"></i></div>
-              <h4 class="product-name">Zoho Expense - Spend Management</h4>
-              <p class="product-description">
-                Automated expense reporting, policy enforcement, multi-level
-                approvals, corporate card reconciliation, and integration with
-                accounting for complete spend visibility.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials-section">
-      <div class="container">
-        <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
-        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-          Success stories from businesses we've transformed
+          Designed specifically to address the unique challenges of consulting
+          businesses
         </p>
 
         <div class="row g-4">
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="testimonial-card">
-              <p class="testimonial-quote">
-                The team's expertise in Zoho ERP implementation was exceptional.
-                They transformed our chaotic inventory and financial processes
-                into a streamlined system. Our operational efficiency improved
-                by 45% within three months.
-              </p>
-              <div class="testimonial-author-section">
-                <div class="testimonial-avatar">RK</div>
-                <div>
-                  <p class="testimonial-author">Rajesh Kumar</p>
-                  <p class="testimonial-position">
-                    CFO, TechManufacturing Pvt Ltd
-                  </p>
-                </div>
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231565C0' width='200' height='200' rx='20'/%3E%3Ccircle cx='100' cy='70' r='30' fill='%23fff' opacity='0.9'/%3E%3Cpath d='M60 120 Q100 100 140 120 L140 160 Q100 180 60 160 Z' fill='%23fff' opacity='0.9'/%3E%3C/svg%3E"
+                  alt="Cloud"
+                />
+                <span class="feature-number">01</span>
               </div>
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+              <h3 class="feature-title">Cloud-Based Platform</h3>
+              <p class="feature-description">
+                Access your business data anywhere, anytime with our fully
+                cloud-hosted solution.
+              </p>
+              <a href="#" class="feature-link">Learn more</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231976D2' width='200' height='200' rx='20'/%3E%3Cpath d='M50 50 L80 50 L80 80 L50 80 Z' fill='%23fff' opacity='0.9'/%3E%3Cpath d='M90 50 L120 50 L120 80 L90 80 Z' fill='%23fff' opacity='0.8'/%3E%3Cpath d='M130 50 L160 50 L160 80 L130 80 Z' fill='%23fff' opacity='0.7'/%3E%3C/svg%3E"
+                  alt="Customization"
+                />
+                <span class="feature-number">02</span>
+              </div>
+              <h3 class="feature-title">Low-Code Customization</h3>
+              <p class="feature-description">
+                Utilize our drag-and-drop interface to build custom modules
+                tailored to your workflows.
+              </p>
+              <a href="#" class="feature-link">Explore customization</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%232196F3' width='200' height='200' rx='20'/%3E%3Crect x='50' y='50' width='100' height='100' rx='10' fill='none' stroke='%23fff' stroke-width='4' opacity='0.9'/%3E%3C/svg%3E"
+                  alt="Security"
+                />
+                <span class="feature-number">03</span>
+              </div>
+              <h3 class="feature-title">Enterprise Security</h3>
+              <p class="feature-description">
+                Protect your sensitive data with bank-grade encryption and
+                compliance standards.
+              </p>
+              <a href="#" class="feature-link">View security</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%2342A5F5' width='200' height='200' rx='20'/%3E%3Ccircle cx='70' cy='100' r='25' fill='%23fff' opacity='0.9'/%3E%3Ccircle cx='130' cy='100' r='25' fill='%23fff' opacity='0.9'/%3E%3C/svg%3E"
+                  alt="Integration"
+                />
+                <span class="feature-number">04</span>
+              </div>
+              <h3 class="feature-title">Seamless Integration</h3>
+              <p class="feature-description">
+                Connect with 1000+ third-party applications through our robust
+                API framework.
+              </p>
+              <a href="#" class="feature-link">Browse integrations</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231565C0' width='200' height='200' rx='20'/%3E%3Cpolyline points='40,150 60,130 80,140 100,100 120,110 140,80 160,90' fill='none' stroke='%23fff' stroke-width='4' opacity='0.9'/%3E%3C/svg%3E"
+                  alt="Analytics"
+                />
+                <span class="feature-number">05</span>
+              </div>
+              <h3 class="feature-title">Real-Time Analytics</h3>
+              <p class="feature-description">
+                Make data-driven decisions with customizable dashboards and
+                predictive analytics.
+              </p>
+              <a href="#" class="feature-link">See analytics</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231976D2' width='200' height='200' rx='20'/%3E%3Ctext x='100' y='120' font-family='Arial' font-size='80' fill='%23fff' text-anchor='middle' font-weight='bold' opacity='0.9'%3E$%3C/text%3E%3C/svg%3E"
+                  alt="Pricing"
+                />
+                <span class="feature-number">06</span>
+              </div>
+              <h3 class="feature-title">Cost-Effective Pricing</h3>
+              <p class="feature-description">
+                Starting at just $20/user/month with transparent pricing and no
+                hidden fees.
+              </p>
+              <a href="#" class="feature-link">View pricing</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ai-section" id="ai-capabilities">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 ai-content" data-aos="fade-right">
+            <h2 class="display-4 mb-4">Powered by Zia - Zoho's AI Assistant</h2>
+            <p class="lead mb-4">
+              Leverage cutting-edge artificial intelligence to automate
+              workflows and gain actionable insights.
+            </p>
+
+            <div class="ai-feature-box">
+              <h4>Intelligent Automation</h4>
+              <p>
+                Automatically identify repetitive tasks and create workflows,
+                macros, and approval chains.
+              </p>
+            </div>
+
+            <div class="ai-feature-box">
+              <h4>Predictive Analytics</h4>
+              <p>
+                Forecast customer churn and identify high-value opportunities
+                with AI-powered models.
+              </p>
+            </div>
+
+            <div class="ai-feature-box">
+              <h4>Conversational AI Agents</h4>
+              <p>
+                Deploy custom AI agents for sales, HR, customer support, and IT
+                help desk.
+              </p>
+            </div>
+
+            <div class="ai-feature-box">
+              <h4>Fraud Detection & OCR</h4>
+              <p>
+                Automatically detect duplicate claims and transform paper bills
+                into live data.
+              </p>
+            </div>
+          </div>
+          <div class="col-lg-6 ai-image-container" data-aos="fade-left">
+            <img
+              src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cdefs%3E%3ClinearGradient id='grad' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2342A5F5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231565C0;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='300' cy='300' r='250' fill='url(%23grad)' opacity='0.2'/%3E%3Cpath d='M300 100 L450 200 L450 400 L300 500 L150 400 L150 200 Z' fill='none' stroke='%23fff' stroke-width='3' opacity='0.8'/%3E%3Ccircle cx='300' cy='300' r='50' fill='%23fff' opacity='0.9'/%3E%3Ctext x='300' y='315' font-family='Arial' font-size='36' fill='%231565C0' text-anchor='middle' font-weight='bold'%3EZIA%3C/text%3E%3C/svg%3E"
+              alt="AI"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="functions-section" id="functions">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          Complete Business Function Coverage
+        </h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Manage every aspect of your consulting business with our integrated
+          modules
+        </p>
+
+        <div class="row g-4">
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="function-category">
+              <div class="category-header">
+                <div class="category-image">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='%231565C0' opacity='0.2'/%3E%3Cpath d='M30 40 L40 50 L60 30' stroke='%231565C0' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+                    alt="Sales"
+                  />
+                </div>
+                <h3 class="category-title">Sales</h3>
+              </div>
+              <ul class="function-list">
+                <li><a href="#">Customer Management</a></li>
+                <li><a href="#">Quote Generation</a></li>
+                <li><a href="#">Invoice Creation</a></li>
+                <li><a href="#">Subscription Billing</a></li>
+                <li><a href="#">Credit Note Processing</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="function-category">
+              <div class="category-header">
+                <div class="category-image">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='20' width='60' height='60' rx='5' fill='%231976D2' opacity='0.2'/%3E%3Ccircle cx='50' cy='40' r='10' fill='%231976D2'/%3E%3C/svg%3E"
+                    alt="Procurement"
+                  />
+                </div>
+                <h3 class="category-title">Procurement</h3>
+              </div>
+              <ul class="function-list">
+                <li><a href="#">Vendor Database</a></li>
+                <li><a href="#">RFQ Management</a></li>
+                <li><a href="#">Purchase Orders</a></li>
+                <li><a href="#">Bill Processing</a></li>
+                <li><a href="#">Payment Tracking</a></li>
+                <li><a href="#">Vendor Credits</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="function-category">
+              <div class="category-header">
+                <div class="category-image">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='25' y='25' width='20' height='20' fill='%232196F3' opacity='0.3'/%3E%3Crect x='55' y='25' width='20' height='20' fill='%232196F3' opacity='0.4'/%3E%3C/svg%3E"
+                    alt="Inventory"
+                  />
+                </div>
+                <h3 class="category-title">Inventory</h3>
+              </div>
+              <ul class="function-list">
+                <li><a href="#">Item Master Data</a></li>
+                <li><a href="#">Composite Items</a></li>
+                <li><a href="#">Bill of Materials</a></li>
+                <li><a href="#">Category Management</a></li>
+                <li><a href="#">Dynamic Price Lists</a></li>
+                <li><a href="#">Barcode Generation</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="function-category">
+              <div class="category-header">
+                <div class="category-image">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='30' y='30' width='40' height='40' rx='5' fill='none' stroke='%2342A5F5' stroke-width='2'/%3E%3C/svg%3E"
+                    alt="Accounting"
+                  />
+                </div>
+                <h3 class="category-title">Accounting</h3>
+              </div>
+              <ul class="function-list">
+                <li><a href="#">Journal Entries</a></li>
+                <li><a href="#">Entry Templates</a></li>
+                <li><a href="#">Currency Management</a></li>
+                <li><a href="#">Chart of Accounts</a></li>
+                <li><a href="#">Sub-Account Tracking</a></li>
+                <li><a href="#">Compliance Tools</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="function-category">
+              <div class="category-header">
+                <div class="category-image">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='35' r='12' fill='%231565C0' opacity='0.3'/%3E%3Cpath d='M30 70 Q50 55 70 70' fill='%231565C0' opacity='0.3'/%3E%3C/svg%3E"
+                    alt="HR"
+                  />
+                </div>
+                <h3 class="category-title">Payroll & HR</h3>
+              </div>
+              <ul class="function-list">
+                <li><a href="#">Employee Database</a></li>
+                <li><a href="#">Automated Pay Runs</a></li>
+                <li><a href="#">Contractor Management</a></li>
+                <li><a href="#">Tax Deduction (TDS)</a></li>
+                <li><a href="#">Compliance Forms</a></li>
+                <li><a href="#">Loan Management</a></li>
+                <li><a href="#">Document Repository</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="150"
+          >
+            <div class="function-category">
+              <div class="category-header">
+                <div class="category-image">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='25' y='40' width='50' height='30' fill='%231976D2' opacity='0.3'/%3E%3C/svg%3E"
+                    alt="Manufacturing"
+                  />
+                </div>
+                <h3 class="category-title">Manufacturing</h3>
+              </div>
+              <ul class="function-list">
+                <li><a href="#">Production Orders</a></li>
+                <li><a href="#">Job Card System</a></li>
+                <li><a href="#">Shop Floor Control</a></li>
+                <li><a href="#">Work Center Setup</a></li>
+                <li><a href="#">Cost Templates</a></li>
+                <li><a href="#">Operations Planning</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="function-category">
+              <div class="category-header">
+                <div class="category-image">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='20' y='40' width='30' height='20' rx='2' fill='%232196F3' opacity='0.3'/%3E%3Ccircle cx='40' cy='65' r='5' fill='%232196F3'/%3E%3C/svg%3E"
+                    alt="Distribution"
+                  />
+                </div>
+                <h3 class="category-title">Distribution</h3>
+              </div>
+              <ul class="function-list">
+                <li><a href="#">Sales Regions</a></li>
+                <li><a href="#">Route Planning</a></li>
+                <li><a href="#">Journey Management</a></li>
+                <li><a href="#">Territory Mapping</a></li>
+                <li><a href="#">Delivery Tracking</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-3 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="250"
+          >
+            <div class="function-category">
+              <div class="category-header">
+                <div class="category-image">
+                  <img
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%2342A5F5' stroke-width='3'/%3E%3Cpath d='M40 50 L48 58 L65 40' stroke='%2342A5F5' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+                    alt="Quality"
+                  />
+                </div>
+                <h3 class="category-title">Quality Control</h3>
+              </div>
+              <ul class="function-list">
+                <li><a href="#">Quality Templates</a></li>
+                <li><a href="#">Inspection Rules</a></li>
+                <li><a href="#">Quality Audits</a></li>
+                <li><a href="#">Worklist Management</a></li>
+                <li><a href="#">Compliance Tracking</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section" id="benefits">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          Why Consulting Firms Choose Zoho ERP
+        </h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Proven results and measurable impact on operations
+        </p>
+
+        <div class="row g-4 mt-4">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="benefit-card">
+              <div class="benefit-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='30' fill='%231565C0' opacity='0.3'/%3E%3Cpath d='M35 50 L45 60 L65 40' stroke='%231565C0' stroke-width='4' fill='none'/%3E%3C/svg%3E"
+                  alt="Productivity"
+                />
+              </div>
+              <h4>Increased Productivity</h4>
+              <p>
+                Businesses report 20-40% operational cost savings through
+                intelligent automation.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="benefit-card">
+              <div class="benefit-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M30 70 L50 50 L70 70' stroke='%231976D2' stroke-width='3' fill='none'/%3E%3Cpath d='M30 50 L50 30 L70 50' stroke='%231976D2' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+                  alt="Scalability"
+                />
+              </div>
+              <h4>Seamless Scalability</h4>
+              <p>
+                Start with core modules and expand effortlessly as your practice
+                grows.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <div class="benefit-card">
+              <div class="benefit-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='30' y='30' width='40' height='40' rx='5' fill='%232196F3' opacity='0.3'/%3E%3Ctext x='50' y='60' font-size='30' fill='%232196F3' text-anchor='middle' font-weight='bold'%3E$%3C/text%3E%3C/svg%3E"
+                  alt="Pricing"
+                />
+              </div>
+              <h4>Transparent Pricing</h4>
+              <p>
+                Pay only for platform access. No surprise fees or hidden costs.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+          >
+            <div class="benefit-card">
+              <div class="benefit-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='35' y='30' width='30' height='40' rx='3' fill='none' stroke='%2342A5F5' stroke-width='3'/%3E%3Ccircle cx='50' cy='55' r='8' fill='%2342A5F5' opacity='0.5'/%3E%3C/svg%3E"
+                  alt="Privacy"
+                />
+              </div>
+              <h4>Privacy-First AI</h4>
+              <p>
+                Your data remains exclusively yours with our privacy-first
+                approach.
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <div class="benefit-card">
+              <div class="benefit-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='35' fill='none' stroke='%231565C0' stroke-width='3'/%3E%3Cpath d='M50 25 L50 50 L65 50' stroke='%231565C0' stroke-width='3' fill='none'/%3E%3C/svg%3E"
+                  alt="Deployment"
+                />
+              </div>
+              <h4>Rapid Deployment</h4>
+              <p>Quick Start implementations go live in just 2 weeks.</p>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="zoom-in"
+            data-aos-delay="300"
+          >
+            <div class="benefit-card">
+              <div class="benefit-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='40' r='15' fill='%231976D2' opacity='0.3'/%3E%3Ccircle cx='35' cy='65' r='10' fill='%231976D2' opacity='0.4'/%3E%3Ccircle cx='65' cy='65' r='10' fill='%231976D2' opacity='0.4'/%3E%3C/svg%3E"
+                  alt="Support"
+                />
+              </div>
+              <h4>Expert Support</h4>
+              <p>
+                Access certified consultants and responsive technical support.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-section" id="testimonials">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          Trusted by Leading Organizations
+        </h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Real results from real businesses
+        </p>
+
+        <div class="row g-4 mt-4">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="testimonial-card">
+              <div class="quote-mark">"</div>
+              <p class="testimonial-text">
+                We save hundreds of hours a week on automations. Zoho
+                transformed our operations across two real estate firms.
+              </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">JD</div>
+                <div class="author-info">
+                  <h5>Operations Director</h5>
+                  <p>Real Estate Firm</p>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <div class="testimonial-card">
-              <p class="testimonial-quote">
-                Unlike other consultants, they truly understood our e-commerce
-                business. The omnichannel setup connected our online store,
-                marketplace sales, and physical retail seamlessly. Revenue
-                tracking is now real-time.
+              <div class="quote-mark">"</div>
+              <p class="testimonial-text">
+                The interface is modern, feature-rich, and always improving.
+                Perfect for our global operations.
               </p>
-              <div class="testimonial-author-section">
-                <div class="testimonial-avatar">PS</div>
-                <div>
-                  <p class="testimonial-author">Priya Sharma</p>
-                  <p class="testimonial-position">CEO, StyleHub Retail</p>
+              <div class="testimonial-author">
+                <div class="author-avatar">PM</div>
+                <div class="author-info">
+                  <h5>Regional Manager</h5>
+                  <p>PUMA Oceania</p>
                 </div>
-              </div>
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
               </div>
             </div>
           </div>
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <div class="testimonial-card">
-              <p class="testimonial-quote">
-                Their custom module development using Zoho Creator solved
-                problems we thought were impossible. The automated workflows
-                saved us hundreds of hours monthly. Best investment we've made
-                in technology.
+              <div class="quote-mark">"</div>
+              <p class="testimonial-text">
+                A powerful tool that accommodates multiple expense policies.
+                Essential for managing our workforce.
               </p>
-              <div class="testimonial-author-section">
-                <div class="testimonial-avatar">AP</div>
-                <div>
-                  <p class="testimonial-author">Amit Patel</p>
-                  <p class="testimonial-position">
-                    Operations Director, Global Logistics Solutions
-                  </p>
+              <div class="testimonial-author">
+                <div class="author-avatar">SR</div>
+                <div class="author-info">
+                  <h5>Director, ERP & Digital</h5>
+                  <p>IFFCO Group</p>
                 </div>
-              </div>
-              <div class="testimonial-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
               </div>
             </div>
           </div>
@@ -2152,160 +1552,340 @@
       </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
       <div class="container">
-        <h2 class="cta-title" data-aos="zoom-in">
-          Ready to Transform Your Business?
-        </h2>
-        <p class="cta-subtitle" data-aos="zoom-in" data-aos-delay="100">
-          Schedule a free consultation with our Zoho ERP experts today
-        </p>
-        <button
-          class="btn btn-primary-custom btn-lg"
-          data-aos="zoom-in"
-          data-aos-delay="200"
-        >
-          <i class="fas fa-rocket"></i> Get Started Now
-        </button>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <h3 class="footer-brand">Zoho ERP</h3>
-            <p class="footer-text">
-              Certified Zoho Premium Partner delivering enterprise-grade ERP
-              implementation and consulting services to businesses worldwide.
-              Transform your operations with proven expertise.
-            </p>
-            <div class="footer-social">
-              <a href="#" class="social-icon"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-              <a href="#" class="social-icon"
-                ><i class="fab fa-linkedin-in"></i
-              ></a>
-              <a href="#" class="social-icon"
-                ><i class="fab fa-instagram"></i
-              ></a>
-            </div>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <h5 class="footer-heading">Services</h5>
-            <ul class="footer-links">
-              <li><a href="#">Implementation</a></li>
-              <li><a href="#">Customization</a></li>
-              <li><a href="#">Integration</a></li>
-              <li><a href="#">Training</a></li>
-              <li><a href="#">Support</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <h5 class="footer-heading">Products</h5>
-            <ul class="footer-links">
-              <li><a href="#">Zoho Books</a></li>
-              <li><a href="#">Zoho Inventory</a></li>
-              <li><a href="#">Zoho Commerce</a></li>
-              <li><a href="#">Zoho People</a></li>
-              <li><a href="#">Zoho Analytics</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <h5 class="footer-heading">Company</h5>
-            <ul class="footer-links">
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Case Studies</a></li>
-              <li><a href="#">Careers</a></li>
-              <li><a href="#">Partners</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-lg-2 col-md-6">
-            <h5 class="footer-heading">Resources</h5>
-            <ul class="footer-links">
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Webinars</a></li>
-              <li><a href="#">Documentation</a></li>
-              <li><a href="#">FAQs</a></li>
-              <li><a href="#">Support</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="footer-bottom">
+        <div class="cta-content" data-aos="zoom-in">
+          <h2>Ready to Transform Your Consulting Business?</h2>
           <p>
-            &copy; 2026 Zoho ERP Consulting. All rights reserved. | Privacy
-            Policy | Terms of Service | Cookie Policy
+            Join thousands of firms leveraging Zoho ERP to streamline operations
+          </p>
+          <div class="mb-4">
+            <button class="btn btn-white-custom me-3 mb-3">
+              Start Your Free Trial
+            </button>
+            <button class="btn btn-outline-light-custom mb-3">
+              Schedule Demo
+            </button>
+          </div>
+          <p class="mt-4" style="font-size: 0.95rem; opacity: 0.9">
+            ✓ No credit card required ✓ 30-day free trial ✓ Cancel anytime
           </p>
         </div>
       </div>
+    </section>
+
+    <section class="features-section" id="resources">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Resources & Support</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Everything you need to succeed with Zoho ERP
+        </p>
+
+        <div class="row g-4">
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Crect fill='%231565C0' x='50' y='40' width='100' height='120' rx='5' opacity='0.2'/%3E%3Crect fill='%231565C0' x='60' y='50' width='80' height='5' opacity='0.6'/%3E%3C/svg%3E"
+                  alt="Docs"
+                />
+              </div>
+              <h3 class="feature-title">Documentation</h3>
+              <p class="feature-description">
+                Comprehensive guides, tutorials, and API references.
+              </p>
+              <a href="#" class="feature-link">Browse docs</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Ccircle cx='100' cy='70' r='25' fill='%231976D2' opacity='0.3'/%3E%3Ccircle cx='70' cy='120' r='20' fill='%231976D2' opacity='0.4'/%3E%3Ccircle cx='130' cy='120' r='20' fill='%231976D2' opacity='0.4'/%3E%3C/svg%3E"
+                  alt="Community"
+                />
+              </div>
+              <h3 class="feature-title">Community Forum</h3>
+              <p class="feature-description">
+                Connect with thousands of Zoho ERP users worldwide.
+              </p>
+              <a href="#" class="feature-link">Join community</a>
+            </div>
+          </div>
+
+          <div
+            class="col-lg-4 col-md-6"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="feature-card">
+              <div class="feature-image">
+                <img
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpath d='M70 140 L100 70 L130 140 Z' fill='%232196F3' opacity='0.3'/%3E%3C/svg%3E"
+                  alt="Training"
+                />
+              </div>
+              <h3 class="feature-title">Training & Certification</h3>
+              <p class="feature-description">
+                Structured learning paths and certification programs.
+              </p>
+              <a href="#" class="feature-link">Explore training</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+      <!-- Global Footer -->
+    <footer class="site-footer">
+      <div class="footer-content">
+        <!-- Company Info -->
+        <div class="footer-section">
+          <h3>Zolytics</h3>
+          <p class="tagline">Certified Zoho Partner</p>
+          <p>
+            We help businesses simplify operations by implementing, customizing,
+            and automating Zoho applications tailored to real-world business
+            workflows.
+          </p>
+        </div>
+
+         <!-- Zoho Solutions - Centered with balanced columns -->
+        <div class="footer-section zoho-solutions">
+          <h3 class="center-heading">Zoho Solutions</h3>
+          <div class="solutions-wrapper">
+            <ul class="solutions-grid">
+              <li><a href="analytics-html">Zoho Analytics</a></li>
+              <li><a href="bigin-html">Zoho Bigin</a></li>
+              <li><a href="billing-html">Zoho Billing</a></li>
+              <li><a href="books-html">Zoho Books</a></li>
+              <li><a href="commerce-html">Zoho Commerce</a></li>
+              <li><a href="crm-html">Zoho CRM</a></li>
+              <li><a href="expense-html">Zoho Expense</a></li>
+              <li><a href="finance.html">Zoho Finance Plus</a></li>
+              <li><a href="inventory-html">Zoho Inventory</a></li>
+
+              <li><a href="payroll-html">Zoho Payroll</a></li>
+
+              <li><a href="peopleplus-html">Zoho People Plus</a></li>
+
+              <li><a href="recruit-html">Zoho Recruit</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>
+            Email: info@zolytics.in <br />
+            Phone: +91 90 7313 9613<br />
+            Location: India
+             <div
+            style="
+              display: flex;
+              align-items: center;
+              gap: 8px;
+              margin-top: 5px;
+            "
+          >
+            <a
+              href="https://wa.me/+919073139613"
+              target="_blank"
+              style="
+                display: flex;
+                align-items: center;
+                text-decoration: none;
+                color: inherit;
+              "
+            >
+              <img
+                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJQAAACUCAMAAABC4vDmAAAAZlBMVEUAAAD////y8vL4+Pjq6urv7+/8/Pz19fXb29vMzMzj4+PU1NSKioq5ublubm6Dg4MiIiJcXFyxsbGfn58zMzNjY2MuLi5JSUl5eXlWVlampqZOTk4/Pz8TExMNDQ3GxsaTk5MaGhposn1kAAAJMklEQVR4nL1c2YKqMAydYd93ERWl/v9PXkV0kjalLdR7Hh3ohDTLSVL4+dmH+1gfyqw9N/k0TXnetCwri3q871x2B+p2ijz3V4DrRXEz/H/BxqFNRGkwnDw7/T+J7kPsqSRa5Iray/+QqMomPYHe8M7f1lfXKHdNRJh+08CK2FyiRa52/IpEtyIKtsr0gN98Qawi2iHRjMC2WJd4j5Y+2moreyL1jQWJZniZLZkGdVQKHtATKz7aEKlbj0tuEudtNjxQltmcBeNkVT6X7Zdp8KXLh96U1V114+64VmPRpr5csminwd+k1uTnbDVSV0Ur9Ven3CPTKFnXyw8afnTtWESQiCfO293wQFt4ynr9JdqQ3sJuo0wltZqbG+bX+0AavnfYJFNLyZRvWOs6UFbgbiEPlIlPW/2mIMhFYG7uubhKssNpKkLvgaHWb2LEDNvtIj1BBGFDXYl6Sup9Mj2QCQZvZFeCPQU71fRCJZBEt9C+Wdh/d7AhE5UgHF3XEeJTao8GFQ63tqcn1YFPDblN2n/gE3ykc1fHm+PZokjP9fmQNanvufPGaMXEIYQsz5S38MFgF8uQIOX+hyqIFsZPsQEdp6to3ZFGzgyt8XyMO2dXzerVk8nFO3DCTC1Yi6FchMq/JdPPzxHHHU9OG3us1eR7Mj0KEvz88rhzRtc5Vio0KXAuk6bmE1Ypne9u/QOVjRiPA6IshGIrpw2Kxd4DSWqhWdFjY6eDVY2uIWPH8S/sWTC4A7ZgvqidgdVJcbojjGIWQj3OHtSCBUrE1Obh4JLutyucmyNCVciiPKpW5MKwhf4qTmpiBD2iv1PphU/VNkIrMhmRWaF/6RH386n617EQFxChFJLNCGlqQIUosa/A9guFdcHHKraux0d9JMj0G1/3CzXCBQMchm6IdxFxrKLaATZGCUhVTC4wZVE4si6wwd6RVaXoT6geo6IY0Vr4/fUt7B8KRdjUYQgiKzGyfUY6hCmQV8MqBemQopsj3VbVqI6UuMHnhZaDfI+iURwleyPU7zPKgUwHLAh9j6xYiYAww0ZhgbaJfX6uZNv6Adlq/OXdZSOgQcd/ssIdIcnWmZfmfbWNaSxc/M/L4K8J6eYyTVnZPxgD3Y9OoEnRpR7jhXnDRlV/h/73fsoO/kiXhWRL/QHfhvuhyPxWCjJ/uqyvJeMfO2U93Id3pIJqoOn7T0XPWGzwhB9OK8tv0Ipl3QNy8k+S5g2oYEGyuB9MiUxyH+V+7rbxCgHoaYtRAy1IUyxFXfTbzSrATMNePwEjdmTBsBdJnsXeFcxir3rkBq1E2lMT9s9mnwjSl1eigaxT3j/mm8auxSMGPycowuz/MPOtJFiuyeda8rwZsOiM5soNcqVYfuOFC1U22+uQQyZzkmB6QvE03beoqg48cDKv22oKxVuVDS68oAfR80VezppC8QM308HmmlCAEjgnI6H4qUpihSLwQrlzZ6zRFUpg6tba7EhTFzOhhKGKpdkksX1QKEUhUHPHMeQJYLtQ/lzitfpCCRuY0vTLWCifFwrGKeWYks/LdkKoGBIQ8VTdfuRnwMyGUDB4vnrlMPdJ2DAAv4FWmhwo9135XzQsVziIYYHridTlCn7x1dONnqfr4X5dQbNeshfIaXTRjnEUyi1ZRXpqM72sDXP9Qh4TjfUhxBYM7YPPIwheriMWDMoLy4ZWopU5xHZHTtjiuETaXDk3RCXWUiXA6EkNSESIp609oeL4G6k7Km1RxShqFGglDsHYH6GB30IoeHheJRTQzp3ltxoGRD2SNPIx9KlkNI3jeSpbGZrAa9+UAJ0S0KQjNdVcaP62STQ7+eE51Ar6NBKhpdNNMxEHqg/jskUsssmWSMIsGqB9roE+rhOpZtANY489jVLWY5tIR4RP8NdeREMQ7VNABd2zcppM/ipESCkLMg/AnTz6Z5WuNpzmJx75BJkj8GFUp+izyVp+LNxAKGR/YDCGntngFNfR+C0aJi4C13DA7xXcv8RgDFsZvm5EsC90OgFFYBi+Vs8N8ZCfoifhiscd5KM12ItR1Vn8k2q+LDbDE1IrKpBwkLwjkzUrnI4GL0OJro1CP5dOkAuYNulKbWUJltGjP3NpGwULaedTho6c5opIhD1AJinYTbz6VyX6WPKKxbqikC5E18TnhjYM92u+0SBCNAt8bkTwAnwywSRWfTDm6xFelAl35wlugwdVbINQD0dsV8Q6C4q4IkV4lCJwm2BrQ2yYaOOKCEqEmSA5LMDHfrZ3NC+EuvyMKnfQJR7JLrFV7TpdXeQwcgVpRv3DO94aCVvG/GjfScDuwOIoSZIozbMLnSFw1kxlNBypiu0SSg1sLYH0ZROmdZUdcARRXkRBTVlqHMpwx+nSl3KAEcZ8628RIPBv0Mj7KqibYq1xT4IjrPL4g96/0npxZDM4uprIGyAdfTrn+zKtNShh8nO++DmBKy/Tmvki3/ueTEInd428HaHvfektkAdGnnbROW8B8j07x0UICOVruBqkoVbN6bAmSr79sJ44enj5t3ZPrFzZ6vXQ9zyqjbR/ikaUrYqnV/heFkd7xx1nsXOkmIFdoO9xmejEXnRs2hO8BoIlq6xE6ns9Sz/yuiL318SRqr+UOR/e9PG964H/+E7AtrwvU5PdBuWcCfkeW57unBAq91rTkvASUx8CcNVTILh7z7zXF428adEU+rs4lnSzT+elWrh7ye2Ur39GI4g0v4VymCSPFmvMti5wqhESIw4RSVus88BLmdPfbyDmOCSkB17XEHjpua6ILHm7H8smkj+arzc/UDdMpPDSps3K4nA6XS51MZTsPMk+vLGAmg0S6FcX0UEQOqHjhK663e/pTpw37d4mBI12CtX4YJJOn04tUqyfqE4qdwun7HSWuZI+UpOzAqu7F/jTy/e7VitUSBEVRnR2Zfe8fPiLRh3b8EGzBbHhafpOso7rNQcuz13rdMsu+o3x28P07iVnWt0X+XeJJIjLDcxCjJxh0l7kOff2oA+65uWbfFcIQPC9tFW3pk5sUsuV5OXWl77R7j2eTPeg6+1Y5in1PcinxyZxo/MxKCmAicSZ6VCmPwxZ20xx+uxvzi3OqWFlsbL5WnifnvKm4WtlsTFmzhnkw3c+Q7gR0W/S2DsEbAcd22WQX8E/qzJwhtC8WuwAAAAASUVORK5CYII="
+                alt="WhatsApp"
+                width="22"
+                height="22"
+              />
+              <span style="font-weight: 500">  +91 90 7313 9613</span>
+            </a>
+          </div>
+          </p>
+          <div class="zoho-logo">
+            <img
+              src="https://www.zohowebstatic.com/sites/zweb/images/commonroot/zoho-logo-white.svg"
+              alt="Zoho Premium Partner"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2026 Zolytics. All rights reserved, All wrong reversed. | Certified
+          Zoho Consulting Partner
+        </p>
+      </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-      <i class="fas fa-arrow-up"></i>
-    </button>
+    <style>
+      /* Footer Styles */
+      .site-footer {
+        background: #050505;
+        color: #e5e7eb;
+        padding: 75px 5% 25px;
+        font-size: 14px;
+      }
 
-    <!-- Bootstrap 5 JS -->
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 40px;
+        margin-bottom: 35px;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .footer-section h3 {
+        font-size: 22px;
+        margin-bottom: 14px;
+        color: #ffffff;
+      }
+
+      .tagline {
+        font-family: "Segoe Script", "Lucida Handwriting", cursive;
+        font-size: 18px;
+        color: #38bdf8;
+        margin-bottom: 12px;
+      }
+
+      .center-heading {
+        text-align: left;
+        margin-bottom: 18px;
+        margin-right: 240px;
+      }
+
+      .footer-section p {
+        color: #cbd5e1;
+        line-height: 1.7;
+      }
+
+      /* Solutions Grid - Perfectly Centered & Aligned */
+      .zoho-solutions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .solutions-wrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+      }
+
+      .solutions-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(150px, 180px));
+        column-gap: 40px;
+        row-gap: 10px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .solutions-grid li {
+        text-align: left;
+        white-space: nowrap;
+        color: #d1d5db;
+        font-weight: 500;
+        transition: color 0.25s ease;
+        cursor: pointer;
+      }
+
+      .solutions-grid li:hover {
+        color: #38bdf8;
+      }
+
+      /* Links */
+      .site-footer a {
+        color: #d1d5db;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.25s ease;
+      }
+
+      .site-footer a:hover {
+        color: #38bdf8;
+      }
+
+      /* Zoho Logo */
+      .zoho-logo {
+        margin-top: 16px;
+      }
+
+      .zoho-logo img {
+        max-width: 140px;
+        opacity: 0.95;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-top: 18px;
+        text-align: center;
+        max-width: 1400px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .footer-bottom p {
+        margin: 0;
+        color: #94a3b8;
+        font-size: 13px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+
+        .solutions-grid {
+          grid-template-columns: repeat(2, 1fr);
+          column-gap: 20px;
+        }
+      }
+    </style>
+
+    <div class="scroll-top" id="scrollTop">↑</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Custom JavaScript -->
     <script>
-      // Initialize AOS
       AOS.init({
         duration: 800,
+        easing: "ease-in-out",
         once: true,
-        offset: 100,
+        mirror: false,
       });
 
-      // Loading animation
       window.addEventListener("load", function () {
         setTimeout(function () {
-          document.getElementById("loadingOverlay").classList.add("hide");
+          document.getElementById("loadingOverlay").classList.add("hidden");
         }, 500);
       });
 
-      // Create background particles
-      function createParticles() {
-        const particlesBg = document.getElementById("particlesBg");
-        const particleCount = 20;
-
-        for (let i = 0; i < particleCount; i++) {
-          const particle = document.createElement("div");
-          particle.className = "particle";
-          particle.style.width = Math.random() * 100 + 20 + "px";
-          particle.style.height = particle.style.width;
-          particle.style.left = Math.random() * 100 + "%";
-          particle.style.top = Math.random() * 100 + "%";
-          particle.style.animationDelay = Math.random() * 15 + "s";
-          particle.style.animationDuration = Math.random() * 10 + 10 + "s";
-          particlesBg.appendChild(particle);
-        }
-      }
-      createParticles();
-
-      // Scroll progress bar
+      const navbar = document.querySelector(".navbar");
       window.addEventListener("scroll", function () {
-        const scrollProgress = document.getElementById("scrollProgress");
-        const scrollTop =
-          window.pageYOffset || document.documentElement.scrollTop;
-        const scrollHeight =
-          document.documentElement.scrollHeight -
-          document.documentElement.clientHeight;
-        const scrollPercentage = (scrollTop / scrollHeight) * 100;
-        scrollProgress.style.width = scrollPercentage + "%";
-      });
-
-      // Navbar scroll effect
-      window.addEventListener("scroll", function () {
-        const navbar = document.querySelector(".navbar");
         if (window.scrollY > 50) {
           navbar.classList.add("scrolled");
         } else {
@@ -2313,189 +1893,56 @@
         }
       });
 
-      // Animated counter for stats
-      function animateCounter(element) {
-        const target = parseInt(element.getAttribute("data-target"));
-        const duration = 2000;
-        const increment = target / (duration / 16);
-        let current = 0;
-
-        const updateCounter = () => {
-          current += increment;
-          if (current < target) {
-            element.textContent =
-              Math.ceil(current) + (target === 98 ? "%" : "+");
-            requestAnimationFrame(updateCounter);
-          } else {
-            element.textContent = target + (target === 98 ? "%" : "+");
-          }
-        };
-
-        updateCounter();
-      }
-
-      // Intersection Observer for counter animation
-      const observerOptions = {
-        threshold: 0.5,
-        rootMargin: "0px",
-      };
-
-      const observer = new IntersectionObserver(function (entries) {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const statNumber = entry.target.querySelector(".stat-number");
-            if (statNumber && !statNumber.classList.contains("animated")) {
-              statNumber.classList.add("animated");
-              animateCounter(statNumber);
-            }
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll(".stat-card").forEach((el) => {
-        observer.observe(el);
-      });
-
-      // Back to top button
-      const backToTopButton = document.getElementById("backToTop");
-
+      const scrollTopBtn = document.getElementById("scrollTop");
       window.addEventListener("scroll", function () {
         if (window.scrollY > 300) {
-          backToTopButton.classList.add("show");
+          scrollTopBtn.classList.add("show");
         } else {
-          backToTopButton.classList.remove("show");
+          scrollTopBtn.classList.remove("show");
         }
       });
 
-      backToTopButton.addEventListener("click", function () {
+      scrollTopBtn.addEventListener("click", function () {
         window.scrollTo({
           top: 0,
           behavior: "smooth",
         });
       });
 
-      // Smooth scroll for anchor links
       document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
-
-      // Enhanced button click handlers
-      document
-        .querySelectorAll(".btn-primary-custom, .btn-secondary-custom")
-        .forEach((button) => {
-          button.addEventListener("click", function (e) {
-            // Create ripple effect
-            const ripple = document.createElement("span");
-            ripple.style.cssText = `
-                    position: absolute;
-                    border-radius: 50%;
-                    background: rgba(255,255,255,0.6);
-                    width: 100px;
-                    height: 100px;
-                    margin-top: -50px;
-                    margin-left: -50px;
-                    animation: ripple 0.6s;
-                    pointer-events: none;
-                `;
-
-            const rect = this.getBoundingClientRect();
-            ripple.style.left = e.clientX - rect.left + "px";
-            ripple.style.top = e.clientY - rect.top + "px";
-
-            this.appendChild(ripple);
-
-            setTimeout(() => {
-              ripple.remove();
-            }, 600);
-
-            // Alert functionality
-            setTimeout(() => {
-              alert(
-                "Thank you for your interest! Our team will contact you shortly.",
-              );
-            }, 100);
-          });
-        });
-
-      // Add ripple animation to CSS dynamically
-      const style = document.createElement("style");
-      style.textContent = `
-            @keyframes ripple {
-                0% {
-                    transform: scale(0);
-                    opacity: 1;
-                }
-                100% {
-                    transform: scale(4);
-                    opacity: 0;
-                }
+          const href = this.getAttribute("href");
+          if (href !== "#") {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              const navHeight = navbar.offsetHeight;
+              const targetPosition =
+                target.getBoundingClientRect().top +
+                window.pageYOffset -
+                navHeight;
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+              });
             }
-        `;
-      document.head.appendChild(style);
-
-      // Parallax effect for hero section
-      window.addEventListener("scroll", function () {
-        const scrolled = window.pageYOffset;
-        const parallax = document.querySelector(".hero-section");
-        if (parallax && scrolled <= window.innerHeight) {
-          parallax.style.transform = "translateY(" + scrolled * 0.5 + "px)";
-        }
-      });
-
-      // Typing effect for hero title (optional enhancement)
-      function typeWriter(element, text, speed = 50) {
-        let i = 0;
-        element.innerHTML = "";
-
-        function type() {
-          if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
           }
-        }
-        type();
-      }
-
-      // Mouse follow effect for service cards
-      document.querySelectorAll(".service-card").forEach((card) => {
-        card.addEventListener("mousemove", function (e) {
-          const rect = this.getBoundingClientRect();
-          const x = e.clientX - rect.left;
-          const y = e.clientY - rect.top;
-
-          const centerX = rect.width / 2;
-          const centerY = rect.height / 2;
-
-          const rotateX = (y - centerY) / 20;
-          const rotateY = (centerX - x) / 20;
-
-          this.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
-        });
-
-        card.addEventListener("mouseleave", function () {
-          this.style.transform = "";
         });
       });
 
-      // Console easter egg
-      console.log(
-        "%c🚀 Zoho ERP Consulting",
-        "color: #0974B0; font-size: 24px; font-weight: bold;",
-      );
-      console.log(
-        "%cLooking for talented developers? Contact us!",
-        "color: #219E4A; font-size: 14px;",
-      );
+      const navLinks = document.querySelectorAll(".nav-link");
+      const navbarCollapse = document.querySelector(".navbar-collapse");
+
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (navbarCollapse.classList.contains("show")) {
+            const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+            bsCollapse.hide();
+          }
+        });
+      });
+
+      console.log("Zoho ERP Website Loaded Successfully! 🚀");
     </script>
   </body>
 </html>
